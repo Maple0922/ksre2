@@ -5,13 +5,18 @@
 /*--------*/
 
 .header {
-  position: relative;
   width: 100%;
   height: $height-header;
   background: $theme-blue;
   padding: 20px 30px;
   box-shadow: 0 4px 4px rgba( 0, 0, 0, .3 );
+  position: fixed;
+  top: 0;
   z-index: 10;
+
+  &__link {
+    display: inline-block;
+  }
 
   &__title {
     font-size: 3rem;
@@ -27,9 +32,12 @@
 }
 
 .sub-header {
+  width: 100%;
   height: $height-sub-header;
   background: $sub-blue;
   box-shadow: 0 4px 4px rgba( 0, 0, 0, .2 );
+  position: fixed;
+  top: $height-header;
 
   &__title {
     line-height: $height-sub-header;
@@ -40,44 +48,60 @@
 }
 
 .main {
+  margin-top: calc( #{$height-header + $height-sub-header} );
   height: calc( 100vh - #{$height-header + $height-sub-header} );
-  overflow-y: scroll;
-  margin: 0 10px;
-}
+  font-size: 2rem;
 
-.main-index {
-  height: calc( 100vh - #{$height-header + $height-sub-header + $height-footer} );
-}
+  > div {
+    padding: 20px;
+  }
 
-.main-reserve {
+  &__index {
+    height: calc( 100% - #{$height-footer} );
+    overflow-y: scroll;
+  }
 
-}
+  &__footer {
+    height: $height-footer;
+    background: $sub-blue;
+    opacity: .8;
+    box-shadow: 0 -4px 4px rgba( 0, 0, 0, .2 );
+    padding: 20px 0;
 
-.main-confirm {
+    button {
+      @include button-primary;
+    }
+  }
 
-}
+  &__reserve {
 
-.main-complete {
+  }
 
-}
+  &__confirm {
 
-.footer {
-  height: $height-footer;
-  background: $sub-blue;
-  opacity: .8;
-  box-shadow: 0 -4px 4px rgba( 0, 0, 0, .2 );
-  padding: 20px 0;
+  }
 
-  &__button {
-    width: 80%;
-    margin: auto;
-    font-size: 1.5rem;
-    display: block;
-    height: $height-button;
-    border-radius: 4px;
-    max-width: 400px;
-    background: $theme-blue;
-    color: $white;
-    box-shadow: 0 4px 4px rgba( 0, 0, 0, .2 );
+  &__complete {
+
+  }
+
+  &__table {
+
+    font-size: 1.4rem;
+    &__data {
+      border: 1;
+      tr {
+        th, td {
+          border: 1px solid #bbb;
+          padding: 6px;
+          text-align: center;
+          &:nth-child(2){
+            width: 500px;
+          }
+        }
+      }
+    }
+
+
   }
 }

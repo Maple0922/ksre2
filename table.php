@@ -16,10 +16,10 @@
     </a>
   </header>
   <section class="sub-header">
-    <h2 class="sub-header__title">予約一覧</h2>
+    <h2 class="sub-header__title">データ一覧</h2>
   </section>
   <main class="main">
-    <div class="main__index">
+    <div class="main__table">
       <?php
       // 変数の初期化
       $db = null;
@@ -38,34 +38,33 @@
       $db = new SQLite3("./db/reserve.sqlite3");
 
       // データの取得
-      $sql = 'SELECT *
-      FROM reserve
-      ORDER BY year asc,
-      month asc,
-      date asc,
-      startTime asc';
+      $sql = 'SELECT * FROM reserve';
       $res = $db->query($sql);
       ?>
+      <table class="main__table__data">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Y</th>
+          <th>M</th>
+          <th>D</th>
+          <th>Start</th>
+          <th>End</th>
+        </tr>
 
-      <?php
-      $row = $res->fetchArray();
-      var_dump($row);
-      while($row = $res->fetchArray()) {
+        <?php
+        while($row = $res->fetchArray()) {
 
-        // for ($i=4;$i<7;$i++) {
-        //   echo '<p>' . $row[$i] . '</p>';
-        // }
+          echo "<tr>";
+          for ($i=0;$i<7;$i++) {
+            echo '<td>'.$row[$i].'</td>';
+          }
+          echo "</tr>";
 
-      }
-      ?>
-    </div>
-    <div class="main__footer">
-      <button
-        type="button"
-        class="main__footer__button"
-        onclick='location.href="/reserve.php"'>
-        予約ページへ
-      </button>
+        }
+        ?>
+      </table>
+      <button type="button" class="footer__button">戻る</button>
     </div>
   </main>
   <script type="text/javascript" src="js/script.js"></script>
