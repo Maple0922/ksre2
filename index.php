@@ -43,9 +43,10 @@
     <?php
     while( $row = $res->fetchArray() ) {
       echo "<div>";
-      for ($i=4;$i<7;$i++) {
-        echo '<p>' . $row[$i] . '</p>';
-      }
+      // for ($i=4;$i<7;$i++) {
+      //   echo '<p>' . $row[$i] . '</p>';
+      // }
+      echo $row[$data_month];
       echo "</div>";
     }
     ?>
