@@ -5,6 +5,8 @@
 <br>
 `cd ksre2`
 <br>
+`npm install`
+<br>
 `php -S localhost:8080`
 
 http://localhost:8080
