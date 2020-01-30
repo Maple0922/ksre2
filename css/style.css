@@ -7,10 +7,34 @@
 
 html {
   color: #000;
-  background: #FFF;
+  background: #fff;
   font-size: 62.5%; }
 
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
   margin: 0;
   padding: 0; }
 
@@ -18,24 +42,41 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-fieldset, img {
+fieldset,
+img {
   border: 0; }
 
-address, caption, cite, code, dfn, em, strong, th, var {
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
   font-style: normal;
   font-weight: normal; }
 
-ol, ul {
+ol,
+ul {
   list-style: none; }
 
 th {
   text-align: left; }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: 100%;
   font-weight: normal; }
 
-input, textarea, button {
+input,
+textarea,
+button {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -56,27 +97,27 @@ input, textarea, button {
 /* FONT */
 /*------*/
 * {
-  font-family: 'Roboto', 'Noto Sans JP', sans-serif; }
+  font-family: "Roboto", "Noto Sans JP", sans-serif; }
 
 /*--------*/
 /* STYLES */
 /*--------*/
 .header {
-  height: 90px;
+  position: relative;
   width: 100%;
-  background: #123F82b4;
+  height: 90px;
+  background: #123f82b4;
   padding: 20px 30px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
-  position: relative;
   z-index: 10; }
   .header__title {
     font-size: 3rem;
-    color: #FFF;
+    color: #fff;
     font-weight: 300;
     letter-spacing: 2px; }
   .header__description {
     font-size: 1rem;
-    color: #DFE4F9; }
+    color: #dfe4f9; }
 
 .sub-header {
   height: 48px;
@@ -89,27 +130,27 @@ input, textarea, button {
     letter-spacing: 2px; }
 
 .main {
-  height: calc(100vh - 138px);
+  height: calc( 100vh - 138px);
   overflow-y: scroll;
   margin: 0 10px; }
 
 .main-index {
-  height: calc(100vh - 218px); }
+  height: calc( 100vh - 218px); }
 
 .footer {
   height: 80px;
   background: #e4eaf1;
-  opacity: 0.8;
+  opacity: .8;
   box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
   padding: 20px 0; }
   .footer__button {
-    display: block;
+    width: 80%;
     margin: auto;
+    font-size: 1.5rem;
+    display: block;
     height: 40px;
     border-radius: 4px;
-    width: 80%;
     max-width: 400px;
-    background: #123F82b4;
-    color: #FFF;
-    font-size: 1.5rem;
+    background: #123f82b4;
+    color: #fff;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2); }

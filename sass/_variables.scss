@@ -2,26 +2,26 @@
 /*  COLORS  */
 /*----------*/
 
-$theme-blue: #123F82b4;
+$theme-blue: #123f82b4;
 $sub-blue: #e4eaf1;
-$background: #FDFDFF;
+$background: #fdfdff;
 
 $black: #111;
-$white: #FFF;
+$white: #fff;
 
-$gray20: rgb(20, 20, 20);
-$gray40: rgb(40, 40, 40);
-$gray60: rgb(60, 60, 60);
-$gray80: rgb(80, 80, 80);
-$gray100: rgb(100, 100, 100);
-$gray120: rgb(120, 120, 120);
-$gray140: rgb(140, 140, 140);
-$gray160: rgb(160, 160, 160);
-$gray180: rgb(180, 180, 180);
-$gray200: rgb(200, 200, 200);
-$gray220: rgb(220, 220, 220);
-$gray240: rgb(240, 240, 240);
-$gray250: rgb(250, 250, 250);
+$gray20: rgb( 20, 20, 20 );
+$gray40: rgb( 40, 40, 40 );
+$gray60: rgb( 60, 60, 60 );
+$gray80: rgb( 80, 80, 80 );
+$gray100: rgb( 100, 100, 100 );
+$gray120: rgb( 120, 120, 120 );
+$gray140: rgb( 140, 140, 140 );
+$gray160: rgb( 160, 160, 160 );
+$gray180: rgb( 180, 180, 180 );
+$gray200: rgb( 200, 200, 200 );
+$gray220: rgb( 220, 220, 220 );
+$gray240: rgb( 240, 240, 240 );
+$gray250: rgb( 250, 250, 250 );
 
 /*-----------*/
 /* VARIABLES */
@@ -32,7 +32,7 @@ $height-sub-header: 48px;
 $height-footer: 80px;
 $height-button: 40px;
 
-$darkstrong-shadow : 0px 3px 10px 0px black;
-$darkweak-shadow : 0px 2px 6px -1px black;
-$lightstrong-shadow : 0px 3px 10px 0px $gray80;
-$lightweak-shadow : 0px 2px 6px -1px $gray80;
+$darkstrong-shadow : 0 3px 10px 0 black;
+$darkweak-shadow : 0 2px 6px -1px black;
+$lightstrong-shadow : 0 3px 10px 0 $gray80;
+$lightweak-shadow : 0 2px 6px -1px $gray80;

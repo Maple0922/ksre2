@@ -1,0 +1,17 @@
+{
+  "name": "hello-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "stylelint": "stylelint \"sass/**/*.scss\" --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "stylelint-order": "^0.8.1",
+    "stylelint-scss": "^2.5.0"
+  },
+  "devDependencies": {
+    "stylelint": "^9.10.1"
+  }
+}

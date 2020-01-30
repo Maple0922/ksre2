@@ -5,12 +5,12 @@
 /*--------*/
 
 .header {
-  height: $height-header;
+  position: relative;
   width: 100%;
+  height: $height-header;
   background: $theme-blue;
   padding: 20px 30px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
-  position: relative;
+  box-shadow: 0 4px 4px rgba( 0, 0, 0, .3 );
   z-index: 10;
 
   &__title {
@@ -22,14 +22,14 @@
 
   &__description {
     font-size: 1rem;
-    color: #DFE4F9;
+    color: #dfe4f9;
   }
 }
 
 .sub-header {
   height: $height-sub-header;
   background: $sub-blue;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 4px rgba( 0, 0, 0, .2 );
 
   &__title {
     line-height: $height-sub-header;
@@ -40,14 +40,13 @@
 }
 
 .main {
-  height: calc(100vh - #{$height-header + $height-sub-header});
+  height: calc( 100vh - #{$height-header + $height-sub-header} );
   overflow-y: scroll;
   margin: 0 10px;
 }
 
 .main-index {
-  height: calc(100vh - #{$height-header + $height-sub-header + $height-footer});
-
+  height: calc( 100vh - #{$height-header + $height-sub-header + $height-footer} );
 }
 
 .main-reserve {
@@ -65,20 +64,20 @@
 .footer {
   height: $height-footer;
   background: $sub-blue;
-  opacity: 0.8;
-  box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
+  opacity: .8;
+  box-shadow: 0 -4px 4px rgba( 0, 0, 0, .2 );
   padding: 20px 0;
 
   &__button {
+    width: 80%;
+    margin: auto;
+    font-size: 1.5rem;
     display: block;
-    margin:  auto;
     height: $height-button;
     border-radius: 4px;
-    width: 80%;
     max-width: 400px;
     background: $theme-blue;
     color: $white;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 4px rgba( 0, 0, 0, .2 );
   }
 }

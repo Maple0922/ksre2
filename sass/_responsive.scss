@@ -14,7 +14,7 @@ $breakpoints: (
 
 // メディアクエリー
 @mixin mq($breakpoint: sp) {
-  @media #{map-get($breakpoints, $breakpoint)} {
+  @media #{map-get( $breakpoints, $breakpoint )} {
     @content;
   }
 }
