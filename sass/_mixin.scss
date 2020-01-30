@@ -14,3 +14,7 @@
 @mixin button-primary {
   @include basic-button($theme-blue, $white);
 }
+
+@mixin button-cancel {
+  @include basic-button($white, $theme-blue);
+}
