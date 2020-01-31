@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+  <meta name="apple-mobile-web-app-title" content="部室予約">
   <title>くされエン部室予約アプリ</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel=”icon” href=“icon/favicon.png”>
@@ -27,37 +28,30 @@
       $res = null;
       $row = null;
 
-      $data_id = 0;
-      $data_name = 1;
-      $data_year = 2;
-      $data_month = 3;
-      $data_date = 4;
-      $data_startTime = 5;
-      $data_endTime = 6;
-
       $db = new SQLite3("./db/reserve.sqlite3");
 
       // データの取得
-      $sql = 'SELECT *
+      // $sql = 'SELECT *
+      // FROM reserve
+      // ORDER BY year asc,
+      // month asc,
+      // date asc,
+      // startTime asc';
+
+      $sql = 'SELECT DISTINCT date
       FROM reserve
-      ORDER BY year asc,
-      month asc,
-      date asc,
-      startTime asc';
+      ORDER BY date asc';
+
       $res = $db->query($sql);
       ?>
+        <?php
+        while($row = $res->fetchArray(1)) {
+          echo '<p>';
+          echo $row['date'];
+          echo '</p>';
+        }
+        ?>
 
-      <?php
-      $row = $res->fetchArray();
-      var_dump($row);
-      while($row = $res->fetchArray()) {
-
-        // for ($i=4;$i<7;$i++) {
-        //   echo '<p>' . $row[$i] . '</p>';
-        // }
-
-      }
-      ?>
     </div>
     <div class="main__footer">
       <button

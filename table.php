@@ -64,7 +64,14 @@
         }
         ?>
       </table>
-      <button type="button" class="footer__button">戻る</button>
+    </div>
+    <div class="main__footer">
+      <button
+        type="button"
+        class="main__footer__button"
+        onclick='location.href="/"'>
+        戻る
+      </button>
     </div>
   </main>
   <script type="text/javascript" src="js/script.js"></script>

@@ -132,7 +132,7 @@ button {
   background: #e4eaf1;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   position: fixed;
-  top: 90px; }
+  top: 89px; }
   .sub-header__title {
     line-height: 48px;
     padding: 2px 20px 0;
@@ -168,10 +168,22 @@ button {
   .main__table {
     font-size: 1.4rem; }
     .main__table__data {
-      border: 1; }
+      border: 1;
+      margin-bottom: 20px; }
       .main__table__data tr th, .main__table__data tr td {
         border: 1px solid #bbb;
         padding: 6px;
         text-align: center; }
         .main__table__data tr th:nth-child(2), .main__table__data tr td:nth-child(2) {
           width: 500px; }
+    .main__table button {
+      width: 80%;
+      margin: auto;
+      font-size: 1.5rem;
+      display: block;
+      height: 40px;
+      border-radius: 4px;
+      max-width: 400px;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+      background: #eee;
+      color: #5c74a4; }
