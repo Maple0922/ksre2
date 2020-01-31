@@ -3,15 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "stylelint": "stylelint \"sass/**/*.scss\" --fix"
+    "stylelint": "stylelint \"sass/**/*.scss\" "
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "stylelint-order": "^0.8.1",
-    "stylelint-scss": "^2.5.0"
+    "stylelint-order": "^0.8.1"
   },
   "devDependencies": {
-    "stylelint": "^9.10.1"
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-scss": "^2.5.0"
   }
 }
