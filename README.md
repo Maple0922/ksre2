@@ -5,7 +5,13 @@
 <br>
 `cd ksre2`
 <br>
-`npm install`
+`npm i`
+<br>
+`npm i -D stylelint`
+<br>
+`npm i -D stylelint-config-recommended stylelint-scss stylelint-config-recommended-scss`
+<br>
+`npm i -D lint-staged husky`
 <br>
 `php -S localhost:8080`
 
