@@ -47,25 +47,8 @@
       FROM reserve
       ORDER BY year asc';
 
-      $sqlMonth = 'SELECT DISTINCT year,month
-      FROM reserve
-      ORDER BY year asc, month asc';
-
-      $sqlDate = 'SELECT DISTINCT date
-      FROM reserve
-      ORDER BY year asc, month asc, date asc';
-
-      $sqlTime = 'SELECT DISTINCT *
-      FROM reserve
-      ORDER BY year asc, month asc, date asc, startTime asc';
-
       $resYear = $db->query($sqlYear);
-      $resMonth = $db->query($sqlMonth);
-      $resDate = $db->query($sqlDate);
-      $resTime = $db->query($sqlTime);
 
-      ?>
-      <?php
       while($rowYear = $resYear->fetchArray(1)) {
         echo '<h2>';
         echo $rowYear['year'].'年';
@@ -104,17 +87,18 @@
                   WHERE year = "'.$year.'"
                   AND month = "'.$month.'"
                   AND date = "'.$date.'"
-                  ORDER BY startTime asc';
+                  ORDER BY startTime asc, id asc';
 
                   $resTime = $db->query($sqlTime);
 
                   echo '<table>';
-                  echo '<tr>';
                   while ($rowTime = $resTime->fetchArray(1)) {
+                    echo '<tr>';
                     echo '<td>'.$rowTime['name'].'</td>';
                     echo '<td>'.$rowTime['startTime'].'~'.$rowTime['endTime'].'</td>';
+                    echo '<td><button type="text">編集</td>';
+                    echo '</tr>';
                   }
-                  echo '</tr>';
                   echo '</table>';
 
                 }
