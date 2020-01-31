@@ -24,42 +24,119 @@
       <?php
       // 変数の初期化
       $db = null;
-      $sql = null;
-      $res = null;
-      $row = null;
+
+      $sqlYear = null;
+      $sqlMonth = null;
+      $sqlDate = null;
+      $sqlTime = null;
+
+      $resYear = null;
+      $resMonth = null;
+      $resDate = null;
+      $resTime = null;
+
+      $rowYear = null;
+      $rowMonth = null;
+      $rowDate = null;
+      $rowTime = null;
+
 
       $db = new SQLite3("./db/reserve.sqlite3");
 
-      // データの取得
-      // $sql = 'SELECT *
-      // FROM reserve
-      // ORDER BY year asc,
-      // month asc,
-      // date asc,
-      // startTime asc';
-
-      $sql = 'SELECT DISTINCT date
+      $sqlYear = 'SELECT DISTINCT year
       FROM reserve
-      ORDER BY date asc';
+      ORDER BY year asc';
 
-      $res = $db->query($sql);
+      $sqlMonth = 'SELECT DISTINCT year,month
+      FROM reserve
+      ORDER BY year asc, month asc';
+
+      $sqlDate = 'SELECT DISTINCT date
+      FROM reserve
+      ORDER BY year asc, month asc, date asc';
+
+      $sqlTime = 'SELECT DISTINCT *
+      FROM reserve
+      ORDER BY year asc, month asc, date asc, startTime asc';
+
+      $resYear = $db->query($sqlYear);
+      $resMonth = $db->query($sqlMonth);
+      $resDate = $db->query($sqlDate);
+      $resTime = $db->query($sqlTime);
+
       ?>
-        <?php
-        while($row = $res->fetchArray(1)) {
-          echo '<p>';
-          echo $row['date'];
-          echo '</p>';
+      <?php
+      while($rowYear = $resYear->fetchArray(1)) {
+        echo '<h2>';
+        echo $rowYear['year'].'年';
+        echo '</h2>';
+
+        foreach ($rowYear as $year) {
+          $sqlMonth = 'SELECT DISTINCT month
+          FROM reserve
+          WHERE year = "'.$year.'"
+          ORDER BY month asc';
+
+          $resMonth = $db->query($sqlMonth);
+
+          while ($rowMonth = $resMonth->fetchArray(1)) {
+            echo '<h3>';
+            echo $rowMonth['month'].'月';
+            echo '</h3>';
+
+            foreach ($rowMonth as $month) {
+              $sqlDate = 'SELECT DISTINCT date
+              FROM reserve
+              WHERE year = "'.$year.'"
+              AND month = "'.$month.'"
+              ORDER BY date asc';
+
+              $resDate = $db->query($sqlDate);
+
+              while ($rowDate = $resDate->fetchArray(1)) {
+                echo '<h4>';
+                echo $rowDate['date'].'日';
+                echo '</h4>';
+
+                foreach ($rowDate as $date) {
+                  $sqlTime = 'SELECT name, startTime, endTime
+                  FROM reserve
+                  WHERE year = "'.$year.'"
+                  AND month = "'.$month.'"
+                  AND date = "'.$date.'"
+                  ORDER BY startTime asc';
+
+                  $resTime = $db->query($sqlTime);
+
+                  echo '<table>';
+                  echo '<tr>';
+                  while ($rowTime = $resTime->fetchArray(1)) {
+                    echo '<td>'.$rowTime['name'].'</td>';
+                    echo '<td>'.$rowTime['startTime'].'~'.$rowTime['endTime'].'</td>';
+                  }
+                  echo '</tr>';
+                  echo '</table>';
+
+                }
+              }
+
+
+            }
+          }
+
+
         }
-        ?>
+
+
+      }
+      ?>
 
     </div>
     <div class="main__footer">
-      <button
-        type="button"
-        class="main__footer__button"
-        onclick='location.href="/reserve.php"'>
-        予約ページへ
-      </button>
+      <button type="button"
+      class="main__footer__button"
+      onclick='location.href="/reserve.php"'
+      >予約ページへ</button>
     </div>
   </main>
   <script type="text/javascript" src="js/script.js"></script>
