@@ -18,7 +18,6 @@
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-scss": "^2.5.0"
   },
-
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
