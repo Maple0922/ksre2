@@ -197,8 +197,8 @@ button {
 }
 .main__table__data tr th,
 .main__table__data tr td {
-  border: 1px solid #bbb;
   padding: 6px;
+  border: 1px solid #bbb;
   text-align: center;
 }
 .main__table__data tr th:nth-child(2),
