@@ -38,6 +38,7 @@
   background: $sub-blue;
   box-shadow: 0 4px 4px rgba( 0, 0, 0, .2 );
   top: $height-header - 1;
+  z-index: 1;
 
   &__title {
     font-size: 1.8rem;
@@ -53,33 +54,79 @@
   font-size: 2rem;
 
   > div {
-    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+
+    border-right: 1px solid $theme-blue;
+    border-left: 1px solid $theme-blue;
   }
 
   &__index {
     height: calc( 100% - #{$height-footer} );
     overflow-y: scroll;
+    padding: 0 20px;
+
     h2 {
-      font-size: 30px;
-      border: 5px double black;
+      position: sticky;
+      width: 33%;
+      font-size: 2.5rem;
+      border-bottom: 3px double $theme-blue;
+      background: white;
+      top: 0;
+      height: 50px;
+      padding: 10px 10px 0;
+      margin-bottom: -50px;
     }
     h3 {
-      font-size: 24px;
-      border: 2px solid black;
+      position: sticky;
+      width: 33%;
+      font-size: 2.4rem;
+      border-bottom: 3px double $theme-blue;
+      background: white;
+      top: 0;
+      left: 33%;
+      text-align: center;
+      height: 50px;
+      padding-top: 10px;
+      margin-bottom: 100px;
     }
     h4 {
-      font-size: 24px;
-      border: 1px solid gray;
+      position: sticky;
+      width: 33%;
+      font-size: 2.4rem;
+      border-bottom: 3px double $theme-blue;
+      background: white;
+      text-align: center;
+      height: 50px;
+      padding-top: 10px;
+      top: 0;
+      left: 66%;
+      margin-bottom: 46px;
     }
-    div {
-      font-size: 0;
-      p {
-        width: 50%;
-        font-size: 16px;
-        border: 1px solid gray;
-        line-height: 20px;
-        display: inline-block;
-        padding: 3px;
+    table {
+      width: 100%;
+      font-size: 1.6rem;
+      margin-bottom: 50px;
+      tr {
+        td {
+          height: 30px;
+          line-height: 35px;
+          border: 1px solid #bbb;
+          padding: 0 8px;
+          &:nth-child(3n) {
+            width: 15%;
+            background: $sub-dakkblue;
+            button {
+              color: white;
+            }
+          }
+          &:nth-child(3n+1) {
+            width: 80%;
+          }
+          &:nth-child(3n+2) {
+            text-align: right;
+          }
+        }
       }
     }
   }
@@ -111,7 +158,7 @@
     overflow-y: scroll;
 
     &__data {
-      border: 1;
+      border: 2px solid black;
       margin-bottom: 20px;
       tr {
         th,

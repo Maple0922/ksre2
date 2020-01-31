@@ -32,11 +32,8 @@
 
       $db = new SQLite3("./db/reserve.sqlite3");
 
-      // 普通のデータの取得
-      // $sql = 'SELECT * FROM reserve
-      //         ORDER BY id desc';
       $sql = 'SELECT * FROM reserve
-              ORDER BY year asc, month asc, date asc, startTime asc';
+              ORDER BY id desc';
 
       $res = $db->query($sql);
       ?>

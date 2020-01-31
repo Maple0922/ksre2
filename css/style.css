@@ -3,16 +3,19 @@
 /*-------*/
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400|Roboto:300,400&display=swap");
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 a {
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+}
 
 html {
   color: #000;
   background: #fff;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body,
 div,
@@ -40,15 +43,18 @@ blockquote,
 th,
 td {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 fieldset,
 img {
-  border: 0; }
+  border: 0;
+}
 
 address,
 caption,
@@ -60,14 +66,17 @@ strong,
 th,
 var {
   font-style: normal;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 ol,
 ul {
-  list-style: none; }
+  list-style: none;
+}
 
 th {
-  text-align: left; }
+  text-align: left;
+}
 
 h1,
 h2,
@@ -76,7 +85,8 @@ h4,
 h5,
 h6 {
   font-size: 100%;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 input,
 textarea,
@@ -86,7 +96,8 @@ button {
   cursor: pointer;
   outline: none;
   padding: 0;
-  appearance: none; }
+  appearance: none;
+}
 
 /*------------*/
 /* RESPONSIVE */
@@ -101,7 +112,8 @@ button {
 /* FONT */
 /*------*/
 * {
-  font-family: Roboto, "Noto Sans JP", sans-serif; }
+  font-family: Roboto, "Noto Sans JP", sans-serif;
+}
 
 /*--------*/
 /* STYLES */
@@ -112,100 +124,164 @@ button {
   height: 90px;
   background: #5c74a4;
   padding: 20px 30px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 4px rgba( 0, 0, 0, .3 );
   top: 0;
-  z-index: 10; }
-  .header__link {
-    display: inline-block; }
-  .header__title {
-    font-size: 3rem;
-    color: #fff;
-    font-weight: 300;
-    letter-spacing: 2px; }
-  .header__description {
-    font-size: 1rem;
-    color: #dfe4f9; }
+  z-index: 10;
+}
+.header__link {
+  display: inline-block;
+}
+.header__title {
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+.header__description {
+  font-size: 1rem;
+  color: #dfe4f9;
+}
 
 .sub-header {
   position: fixed;
   width: 100%;
   height: 48px;
   background: #e4eaf1;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-  top: 89px; }
-  .sub-header__title {
-    font-size: 1.8rem;
-    line-height: 48px;
-    padding: 2px 20px 0;
-    letter-spacing: 2px; }
+  box-shadow: 0 4px 4px rgba( 0, 0, 0, .2 );
+  top: 89px;
+  z-index: 1;
+}
+.sub-header__title {
+  font-size: 1.8rem;
+  line-height: 48px;
+  padding: 2px 20px 0;
+  letter-spacing: 2px;
+}
 
 .main {
-  margin-top: calc( 138px);
-  height: calc( 100vh - 138px);
-  font-size: 2rem; }
-  .main > div {
-    padding: 20px; }
-  .main__index {
-    height: calc( 100% - 80px);
-    overflow-y: scroll; }
-    .main__index h2 {
-      font-size: 30px;
-      border: 5px double black; }
-    .main__index h3 {
-      font-size: 24px;
-      border: 2px solid black; }
-    .main__index h4 {
-      font-size: 24px;
-      border: 1px solid gray; }
-    .main__index div {
-      font-size: 0; }
-      .main__index div p {
-        width: 50%;
-        font-size: 16px;
-        border: 1px solid gray;
-        line-height: 20px;
-        display: inline-block;
-        padding: 3px; }
-  .main__footer {
-    height: 80px;
-    background: #e4eaf1;
-    opacity: .8;
-    box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
-    padding: 20px 0; }
-    .main__footer button {
-      width: 80%;
-      margin: auto;
-      font-size: 1.5rem;
-      display: block;
-      height: 40px;
-      border-radius: 4px;
-      max-width: 400px;
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-      background: #5c74a4;
-      color: #fff; }
-  .main__table {
-    height: calc( 100% - 80px);
-    font-size: 1.4rem;
-    overflow-y: scroll; }
-    .main__table__data {
-      border: 1;
-      margin-bottom: 20px; }
-      .main__table__data tr th,
-      .main__table__data tr td {
-        padding: 6px;
-        border: 1px solid #bbb;
-        text-align: center; }
-        .main__table__data tr th:nth-child(2),
-        .main__table__data tr td:nth-child(2) {
-          width: 500px; }
-    .main__table button {
-      width: 80%;
-      margin: auto;
-      font-size: 1.5rem;
-      display: block;
-      height: 40px;
-      border-radius: 4px;
-      max-width: 400px;
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-      background: #eee;
-      color: #5c74a4; }
+  margin-top: calc( 138px );
+  height: calc( 100vh - 138px );
+  font-size: 2rem;
+}
+.main > div {
+  max-width: 600px;
+  margin: 0 auto;
+  border-right: 1px solid #5c74a4;
+  border-left: 1px solid #5c74a4;
+}
+.main__index {
+  height: calc( 100% - 80px );
+  overflow-y: scroll;
+  padding: 0 20px;
+}
+.main__index h2 {
+  position: sticky;
+  width: 33%;
+  font-size: 2.5rem;
+  border-bottom: 3px double #5c74a4;
+  background: white;
+  top: 0;
+  height: 50px;
+  padding: 10px 10px 0;
+  margin-bottom: -50px;
+}
+.main__index h3 {
+  position: sticky;
+  width: 33%;
+  font-size: 2.4rem;
+  border-bottom: 3px double #5c74a4;
+  background: white;
+  top: 0;
+  left: 33%;
+  text-align: center;
+  height: 50px;
+  padding-top: 10px;
+  margin-bottom: 100px;
+}
+.main__index h4 {
+  position: sticky;
+  width: 33%;
+  font-size: 2.4rem;
+  border-bottom: 3px double #5c74a4;
+  background: white;
+  text-align: center;
+  height: 50px;
+  padding-top: 10px;
+  top: 0;
+  left: 66%;
+  margin-bottom: 46px;
+}
+.main__index table {
+  width: 100%;
+  font-size: 1.6rem;
+  margin-bottom: 50px;
+}
+.main__index table tr td {
+  height: 30px;
+  line-height: 35px;
+  border: 1px solid #bbb;
+  padding: 0 8px;
+}
+.main__index table tr td:nth-child(3n) {
+  width: 15%;
+  background: #153152;
+}
+.main__index table tr td:nth-child(3n) button {
+  color: white;
+}
+.main__index table tr td:nth-child(3n+1) {
+  width: 80%;
+}
+.main__index table tr td:nth-child(3n+2) {
+  text-align: right;
+}
+.main__footer {
+  height: 80px;
+  background: #e4eaf1;
+  opacity: .8;
+  box-shadow: 0 -4px 4px rgba( 0, 0, 0, .2 );
+  padding: 20px 0;
+}
+.main__footer button {
+  width: 80%;
+  margin: auto;
+  font-size: 1.5rem;
+  display: block;
+  height: 40px;
+  border-radius: 4px;
+  max-width: 400px;
+  box-shadow: 0 4px 4px rgba( 0, 0, 0, .2 );
+  background: #5c74a4;
+  color: #fff;
+}
+.main__table {
+  height: calc( 100% - 80px );
+  font-size: 1.4rem;
+  overflow-y: scroll;
+}
+.main__table__data {
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+.main__table__data tr th,
+.main__table__data tr td {
+  padding: 6px;
+  border: 1px solid #bbb;
+  text-align: center;
+}
+.main__table__data tr th:nth-child(2),
+.main__table__data tr td:nth-child(2) {
+  width: 500px;
+}
+.main__table button {
+  width: 80%;
+  margin: auto;
+  font-size: 1.5rem;
+  display: block;
+  height: 40px;
+  border-radius: 4px;
+  max-width: 400px;
+  box-shadow: 0 4px 4px rgba( 0, 0, 0, .2 );
+  background: #eee;
+  color: #5c74a4;
+}
