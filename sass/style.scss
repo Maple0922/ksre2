@@ -40,7 +40,7 @@
   top: $height-header - 1;
 
   &__title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     line-height: $height-sub-header;
     padding: 2px 20px 0;
     letter-spacing: 2px;
@@ -59,6 +59,29 @@
   &__index {
     height: calc( 100% - #{$height-footer} );
     overflow-y: scroll;
+    h2 {
+      font-size: 30px;
+      border: 5px double black;
+    }
+    h3 {
+      font-size: 24px;
+      border: 2px solid black;
+    }
+    h4 {
+      font-size: 24px;
+      border: 1px solid gray;
+    }
+    div {
+      font-size: 0;
+      p {
+        width: 50%;
+        font-size: 16px;
+        border: 1px solid gray;
+        line-height: 20px;
+        display: inline-block;
+        padding: 3px;
+      }
+    }
   }
 
   &__footer {
@@ -83,8 +106,10 @@
   // }
 
   &__table {
-
+    height: calc( 100% - #{$height-footer} );
     font-size: 1.4rem;
+    overflow-y: scroll;
+
     &__data {
       border: 1;
       margin-bottom: 20px;
