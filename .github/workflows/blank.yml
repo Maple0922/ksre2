@@ -22,7 +22,6 @@ jobs:
           npm ci
       - name: lint
         run: |
-          npm run eslint src/**/*.ts
           npm run stylelint
       - name: build:prod
         run: |
