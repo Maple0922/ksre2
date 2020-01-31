@@ -23,11 +23,5 @@ jobs:
       - name: lint
         run: |
           npm run stylelint
-      - name: build:prod
-        run: |
-          npm run build:prod
-      - name: test
-        run: |
-          npm run test -- --watch=false --browsers=ChromeHeadless
         env:
           CI: true
