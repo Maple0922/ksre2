@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "stylelint": "stylelint \"sass/**/*.scss\" "
+    "stylelint": "stylelint \"sass/*.scss\" "
   },
   "author": "",
   "license": "ISC",
@@ -25,7 +25,7 @@
     }
   },
   "lint-staged": {
-    "*.{scss}": [
+    "*.scss": [
       "stylelint --fix",
       "git add"
     ]
