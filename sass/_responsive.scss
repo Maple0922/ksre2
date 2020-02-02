@@ -1,7 +1,3 @@
-/*------------*/
-/* RESPONSIVE */
-/*------------*/
-
 // レイアウト幅
 $layout_width_inner: 1180px;
 
@@ -13,8 +9,8 @@ $breakpoints: (
 );
 
 // メディアクエリー
-@mixin mq($breakpoint: sp) {
-  @media #{map-get( $breakpoints, $breakpoint )} {
+@mixin mq( $breakpoint: sp ) {
+  @media #{map-get($breakpoints, $breakpoint)} {
     @content;
   }
 }
