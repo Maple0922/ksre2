@@ -1,6 +1,3 @@
-/*-------*/
-/* RESET */
-/*-------*/
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400|Roboto:300,400&display=swap");
 * {
   box-sizing: border-box; }
@@ -88,24 +85,9 @@ button {
   padding: 0;
   appearance: none; }
 
-/*------------*/
-/* RESPONSIVE */
-/*------------*/
-/*----------*/
-/*  COLORS  */
-/*----------*/
-/*-----------*/
-/* VARIABLES */
-/*-----------*/
-/*------*/
-/* FONT */
-/*------*/
 * {
   font-family: Roboto, "Noto Sans JP", sans-serif; }
 
-/*--------*/
-/* STYLES */
-/*--------*/
 .header {
   position: fixed;
   width: 100%;
@@ -141,8 +123,8 @@ button {
     letter-spacing: 2px; }
 
 .main {
-  margin-top: calc( 138px);
-  height: calc( 100vh - 138px);
+  margin-top: calc(138px);
+  height: calc(100vh - 138px);
   font-size: 2rem; }
   .main > div {
     max-width: 600px;
@@ -150,7 +132,7 @@ button {
     border-right: 1px solid #5c74a4;
     border-left: 1px solid #5c74a4; }
   .main__index {
-    height: calc( 100% - 80px);
+    height: calc(100% - 80px);
     overflow-y: scroll;
     padding: 0 20px; }
     .main__index h2 {
@@ -194,7 +176,7 @@ button {
   .main__footer {
     height: 80px;
     background: #e4eaf1;
-    opacity: .8;
+    opacity: 0.8;
     box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
     padding: 20px 0; }
     .main__footer button {
@@ -209,7 +191,7 @@ button {
       background: #5c74a4;
       color: #fff; }
   .main__table {
-    height: calc( 100% - 80px);
+    height: calc(100% - 80px);
     font-size: 1.4rem;
     overflow-y: scroll; }
     .main__table__data {

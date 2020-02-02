@@ -1,16 +1,12 @@
 @import "import";
 
-/*--------*/
-/* STYLES */
-/*--------*/
-
 .header {
   position: fixed;
   width: 100%;
   height: $height-header;
   background: $theme-blue;
   padding: 20px 30px;
-  box-shadow: 0 4px 4px rgba( 0, 0, 0, .3 );
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
   top: 0;
   z-index: 1000;
 
@@ -36,7 +32,7 @@
   width: 100%;
   height: $height-sub-header;
   background: $sub-blue;
-  box-shadow: 0 4px 4px rgba( 0, 0, 0, .2 );
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   top: $height-header - 1;
   z-index: 900;
 
@@ -49,20 +45,19 @@
 }
 
 .main {
-  margin-top: calc( #{$height-header + $height-sub-header} );
-  height: calc( 100vh - #{$height-header + $height-sub-header} );
+  margin-top: calc(#{$height-header + $height-sub-header});
+  height: calc(100vh - #{$height-header + $height-sub-header});
   font-size: 2rem;
 
   > div {
     max-width: 600px;
     margin: 0 auto;
-
     border-right: 1px solid $theme-blue;
     border-left: 1px solid $theme-blue;
   }
 
   &__index {
-    height: calc( 100% - #{$height-footer} );
+    height: calc(100% - #{$height-footer});
     overflow-y: scroll;
     padding: 0 20px;
 
@@ -77,11 +72,13 @@
       margin-bottom: 30px;
       z-index: 800;
     }
+
     h3 {
       font-size: 2.4rem;
       background: white;
-      padding: 10px
+      padding: 10px;
     }
+
     span {
       font-size: 1.6rem;
       margin: 0 10px;
@@ -89,26 +86,32 @@
       top: -1px;
       z-index: 1;
     }
+
     table {
       width: 100%;
       font-size: 1.6rem;
       margin-bottom: 50px;
+
       tr {
         td {
           height: 30px;
           line-height: 35px;
           border: 1px solid #bbb;
           padding: 0 8px;
+
           &:nth-child(3n) {
             width: 15%;
             background: $sub-dakkblue;
+
             button {
               color: white;
             }
           }
+
           &:nth-child(3n+1) {
             width: 80%;
           }
+
           &:nth-child(3n+2) {
             text-align: right;
           }
@@ -120,8 +123,8 @@
   &__footer {
     height: $height-footer;
     background: $sub-blue;
-    opacity: .8;
-    box-shadow: 0 -4px 4px rgba( 0, 0, 0, .2 );
+    opacity: 0.8;
+    box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
     padding: 20px 0;
 
     button {
@@ -139,25 +142,28 @@
   // }
 
   &__table {
-    height: calc( 100% - #{$height-footer} );
+    height: calc(100% - #{$height-footer});
     font-size: 1.4rem;
     overflow-y: scroll;
 
     &__data {
       border: 2px solid black;
       margin-bottom: 20px;
+
       tr {
         th,
         td {
           padding: 6px;
           border: 1px solid #bbb;
           text-align: center;
+
           &:nth-child(2) {
             width: 500px;
           }
         }
       }
     }
+
     button {
       @include button-cancel;
     }
