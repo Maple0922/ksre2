@@ -12,7 +12,7 @@
   padding: 20px 30px;
   box-shadow: 0 4px 4px rgba( 0, 0, 0, .3 );
   top: 0;
-  z-index: 10;
+  z-index: 1000;
 
   &__link {
     display: inline-block;
@@ -38,7 +38,7 @@
   background: $sub-blue;
   box-shadow: 0 4px 4px rgba( 0, 0, 0, .2 );
   top: $height-header - 1;
-  z-index: 1;
+  z-index: 900;
 
   &__title {
     font-size: 1.8rem;
@@ -68,40 +68,26 @@
 
     h2 {
       position: sticky;
-      width: 33%;
-      font-size: 2.5rem;
+      width: 100%;
+      font-size: 2.4rem;
       border-bottom: 3px double $theme-blue;
       background: white;
       top: 0;
-      height: 50px;
-      padding: 10px 10px 0;
-      margin-bottom: -50px;
+      padding: 20px 10px 5px;
+      margin-bottom: 30px;
+      z-index: 800;
     }
     h3 {
-      position: sticky;
-      width: 33%;
       font-size: 2.4rem;
-      border-bottom: 3px double $theme-blue;
       background: white;
-      top: 0;
-      left: 33%;
-      text-align: center;
-      height: 50px;
-      padding-top: 10px;
-      margin-bottom: 100px;
+      padding: 10px
     }
-    h4 {
-      position: sticky;
-      width: 33%;
-      font-size: 2.4rem;
-      border-bottom: 3px double $theme-blue;
-      background: white;
-      text-align: center;
-      height: 50px;
-      padding-top: 10px;
-      top: 0;
-      left: 66%;
-      margin-bottom: 46px;
+    span {
+      font-size: 1.6rem;
+      margin: 0 10px;
+      position: relative;
+      top: -1px;
+      z-index: 1;
     }
     table {
       width: 100%;

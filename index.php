@@ -45,27 +45,30 @@
 
       $sqlYear = 'SELECT DISTINCT year
       FROM reserve
+      -- 今の年以降のデータのみ取得
+      -- テスト段階では使わない
+      -- WHERE year >= "'.date("Y").'"
       ORDER BY year asc';
 
       $resYear = $db->query($sqlYear);
 
       while($rowYear = $resYear->fetchArray(1)) {
-        echo '<h2>';
-        echo $rowYear['year'].'年';
-        echo '</h2>';
 
         foreach ($rowYear as $year) {
           $sqlMonth = 'SELECT DISTINCT month
           FROM reserve
+          -- 今の年以降のデータのみ取得
+          -- テスト段階では使わない
+          -- AND month >= "'.date("n").'"
           WHERE year = "'.$year.'"
           ORDER BY month asc';
 
           $resMonth = $db->query($sqlMonth);
 
           while ($rowMonth = $resMonth->fetchArray(1)) {
-            echo '<h3>';
-            echo $rowMonth['month'].'月';
-            echo '</h3>';
+            echo '<h2>';
+            echo $rowYear['year'].'<span>年</span>'.$rowMonth['month'].'<span>月</span>';
+            echo '</h2>';
 
             foreach ($rowMonth as $month) {
               $sqlDate = 'SELECT DISTINCT date
@@ -77,9 +80,9 @@
               $resDate = $db->query($sqlDate);
 
               while ($rowDate = $resDate->fetchArray(1)) {
-                echo '<h4>';
-                echo $rowDate['date'].'日';
-                echo '</h4>';
+                echo '<h3>';
+                echo $rowDate['date'].'<span>日</span>';
+                echo '</h3>';
 
                 foreach ($rowDate as $date) {
                   $sqlTime = 'SELECT name, startTime, endTime
@@ -103,15 +106,9 @@
 
                 }
               }
-
-
             }
           }
-
-
         }
-
-
       }
       ?>
 
