@@ -9,7 +9,7 @@
 <br>
 `npm i -D stylelint`
 <br>
-`npm i -D stylelint-config-recommended stylelint-scss stylelint-config-recommended-scss`
+`npm i -D stylelint-config-standard`
 <br>
 `npm i -D lint-staged husky`
 <br>
