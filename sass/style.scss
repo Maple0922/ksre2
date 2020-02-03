@@ -126,6 +126,8 @@
     opacity: 0.8;
     box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
     padding: 20px 0;
+    position: relative;
+    z-index: 900;
 
     button {
       @include button-primary;

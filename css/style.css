@@ -178,7 +178,9 @@ button {
     background: #e4eaf1;
     opacity: 0.8;
     box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
-    padding: 20px 0; }
+    padding: 20px 0;
+    position: relative;
+    z-index: 900; }
     .main__footer button {
       width: 80%;
       margin: auto;
