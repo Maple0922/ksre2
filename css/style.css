@@ -129,12 +129,13 @@ button {
   .main > div {
     max-width: 600px;
     margin: 0 auto;
-    border-right: 1px solid #5c74a4;
-    border-left: 1px solid #5c74a4; }
+    padding: 16px 20px;
+    border-right: 3px solid #eee;
+    border-left: 3px solid #eee; }
   .main__index {
     height: calc(100% - 80px);
     overflow-y: scroll;
-    padding: 0 20px; }
+    padding: 0 20px !important; }
     .main__index h2 {
       position: sticky;
       width: 100%;
@@ -165,20 +166,24 @@ button {
         border: 1px solid #bbb;
         padding: 0 8px; }
         .main__index table tr td:nth-child(3n) {
-          width: 15%;
+          min-width: 50px;
+          text-align: center;
           background: #153152; }
           .main__index table tr td:nth-child(3n) button {
             color: white; }
         .main__index table tr td:nth-child(3n+1) {
           width: 80%; }
         .main__index table tr td:nth-child(3n+2) {
-          text-align: right; }
+          text-align: right;
+          width: 30%;
+          max-width: 300px;
+          min-width: 100px; }
   .main__footer {
     height: 80px;
     background: #e4eaf1;
     opacity: 0.8;
     box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
-    padding: 20px 0;
+    padding: 20px 0 !important;
     position: relative;
     z-index: 900; }
     .main__footer button {
@@ -192,13 +197,70 @@ button {
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
       background: #5c74a4;
       color: #fff; }
+  .main__reserve__input label {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 6px;
+    display: block;
+    line-height: 40px; }
+    .main__reserve__input label i {
+      margin-right: 5px;
+      color: #555;
+      padding: 3px;
+      font-size: 2.2rem; }
+  .main__reserve__input input,
+  .main__reserve__input select {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 36px;
+    border: 1px solid #bbb;
+    padding: 0 8px;
+    margin-bottom: 30px;
+    font-size: 1.6rem;
+    background: white; }
+    .main__reserve__input input option,
+    .main__reserve__input select option {
+      text-align: center; }
+  .main__reserve__input span {
+    font-size: 1.4rem;
+    margin-right: 16px;
+    margin-left: 2px; }
+  .main__reserve__input small {
+    margin: 0 8px; }
+  .main__reserve__input .form-name {
+    width: 100%; }
+  .main__reserve__input .form-year {
+    width: 60px; }
+  .main__reserve__input .form-month,
+  .main__reserve__input .form-date {
+    width: 36px; }
+  .main__reserve__input .form-starttime,
+  .main__reserve__input .form-endtime {
+    width: 60px;
+    margin-bottom: 40px; }
+  .main__reserve__input .submit {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 80%;
+    margin: auto;
+    font-size: 1.5rem;
+    display: block;
+    height: 40px;
+    border-radius: 4px;
+    max-width: 400px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    background: #5c74a4;
+    color: #fff; }
   .main__table {
     height: calc(100% - 80px);
     font-size: 1.4rem;
     overflow-y: scroll; }
     .main__table__data {
-      border: 2px solid black;
-      margin-bottom: 20px; }
+      border: 1px solid black; }
       .main__table__data tr th,
       .main__table__data tr td {
         padding: 6px;
