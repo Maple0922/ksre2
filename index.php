@@ -5,7 +5,7 @@
     <h2 class="sub-header__title">予約一覧</h2>
   </section>
   <main class="main">
-    <div class="main__index">
+    <div class="index">
       <?php
       // 変数の初期化
       $db = null;
@@ -98,9 +98,9 @@
       ?>
 
     </div>
-    <div class="main__footer">
+    <div class="footer">
       <button type="button"
-      class="main__footer__button"
+      class="button-primary"
       onclick='location.href="/reserve.php"'
       >予約ページへ</button>
     </div>

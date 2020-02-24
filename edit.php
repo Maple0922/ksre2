@@ -5,8 +5,8 @@
     <h2 class="sub-header__title">予約変更</h2>
   </section>
   <main class="main">
-    <div class="main__reserve">
-      <form method="post" class="main__reserve__input">
+    <div class="edit">
+      <form method="post" class="edit__input">
         <label for="name" class="label-name"><img src="images/music.svg">バンド名</label>
         <input class='form-name' type="text" required
         placeholder="入力してください" name="name">

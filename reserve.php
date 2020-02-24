@@ -5,8 +5,8 @@
     <h2 class="sub-header__title">部室予約</h2>
   </section>
   <main class="main">
-    <div class="main__reserve">
-      <form method="post" class="main__reserve__input" action="confirm.php">
+    <div class="reserve">
+      <form method="post" class="reserve__input" action="complete.php">
         <label for="name" class="label-name"><img src="images/music.svg">バンド名</label>
         <input class='form-name' type="text" required
         placeholder="入力してください" name="name">
@@ -75,7 +75,7 @@
           ?>
         </select>
         <br>
-        <button class='submit' type="submit">予約</button>
+        <button class='button-primary' type="submit">予約</button>
       </form>
     </div>
   </main>

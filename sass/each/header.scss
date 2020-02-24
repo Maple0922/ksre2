@@ -1,0 +1,48 @@
+.header {
+  position: fixed;
+  width: 100%;
+  height: $height-header;
+  background: $theme-blue;
+  padding: 20px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  top: 0;
+  z-index: 1000;
+
+  &__link {
+    display: inline-block;
+  }
+
+  &__title {
+    font-size: 3.6rem;
+    color: $white;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-left: 4px;
+    font-family: 'logo', sans-serif;
+  }
+
+  &__description {
+    font-size: 1.1rem;
+    color: #dfe4f9;
+    margin-left: 4px;
+  }
+}
+
+.sub-header {
+  position: fixed;
+  width: 100%;
+  height: $height-sub-header;
+  background: $sub-blue;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  top: $height-header - 1;
+  z-index: 900;
+
+  &__title {
+    font-size: 1.8rem;
+    line-height: $height-sub-header;
+    padding: 2px 20px 0;
+    letter-spacing: 2px;
+    font-weight: 400;
+  }
+}

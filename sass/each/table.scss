@@ -1,0 +1,22 @@
+.table {
+  height: calc(100% - #{$height-footer});
+  font-size: 1.4rem;
+  overflow-y: scroll;
+
+  &__data {
+    border: 1px solid black;
+
+    tr {
+      th,
+      td {
+        padding: 6px;
+        border: 1px solid #bbb;
+        text-align: center;
+
+        &:nth-child(2) {
+          width: 500px;
+        }
+      }
+    }
+  }
+}
