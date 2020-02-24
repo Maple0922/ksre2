@@ -5,13 +5,13 @@
     <h2 class="sub-header__title">部室予約</h2>
   </section>
   <main class="main">
-    <div class="main__reserve">
-      <form method="post" class="main__reserve__input">
-        <label for="name" class="label-name"><i class="fas fa-music"></i>バンド名</label>
+    <div class="reserve">
+      <form method="post" class="reserve__input" action="complete.php">
+        <label for="name" class="label-name"><img src="images/music.svg">バンド名</label>
         <input class='form-name' type="text" required
         placeholder="入力してください" name="name">
-        <label for="year month date" class="label-date"><i class="far fa-calendar-alt"></i>予約日</label>
-        <select class="form-year" name="year">
+        <label for="year" class="label-date"><img src="images/calendar.svg">予約日</label>
+        <select class="form-year" name="year" id="year">
           <?php
           for($i=0;$i<=1;$i++){
             $year = date('Y')+$i;
@@ -36,7 +36,7 @@
           ?>
         </select>
         <span>日</span>
-        <label for="startTime endTime" class="label-time"><i class="far fa-clock"></i>練習時間</label>
+        <label for="startTime endTime" class="label-time"><img src="images/clock.svg">練習時間</label>
         <select class='form-starttime' name='startTime' required>
           <option value='' selected disabled>--:--</option>
           <?php
@@ -75,10 +75,10 @@
           ?>
         </select>
         <br>
-        <button class='submit' type="submit">予約</button>
+        <button class='button-primary' type="submit">予約</button>
       </form>
     </div>
   </main>
-  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/today.js"></script>
 </body>
 </html>

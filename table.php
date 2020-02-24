@@ -5,7 +5,7 @@
     <h2 class="sub-header__title">データ一覧</h2>
   </section>
   <main class="main">
-    <div class="main__table">
+    <div class="table">
       <?php
       // 変数の初期化
       $db = null;
@@ -23,7 +23,7 @@
 
       $res = $db->query($sql);
       ?>
-      <table class="main__table__data">
+      <table class="table__data">
         <tr>
           <th>ID</th>
           <th>Name</th>
@@ -47,15 +47,14 @@
         ?>
       </table>
     </div>
-    <div class="main__footer">
+    <div class="footer">
       <button
         type="button"
-        class="main__footer__button"
+        class="button-primary"
         onclick='location.href="/"'>
         戻る
       </button>
     </div>
   </main>
-  <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

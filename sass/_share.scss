@@ -1,0 +1,46 @@
+html,
+body {
+  @include mq("superMin") {
+    font-size: 56%;
+  }
+}
+
+.main {
+  margin-top: calc(#{$height-header + $height-sub-header});
+  height: calc(100vh - #{$height-header + $height-sub-header});
+  font-size: 2rem;
+
+  > div {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px 20px;
+    border-right: 3px solid #eee;
+    border-left: 3px solid #eee;
+  }
+
+  > .footer {
+    height: $height-footer;
+    background: $sub-blue;
+    opacity: 0.8;
+    padding: 20px;
+    box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 900;
+  }
+
+  .caption {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #555;
+    padding: 0 10px;
+    margin-bottom: 30px;
+  }
+
+  .button-primary {
+    @include button-primary;
+  }
+
+  .button-cancel {
+    @include button-cancel;
+  }
+}
