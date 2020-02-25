@@ -1,55 +1,98 @@
-.reserve__input label {
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin-bottom: 6px;
-  display: block;
-  line-height: 40px;
-  color: #444; }
-  .reserve__input label img {
-    margin-right: 5px;
-    opacity: 0.7;
-    width: 28px;
-    padding: 3px;
-    position: relative;
-    top: 7px; }
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500|Roboto:300,400,500&display=swap");
+* {
+  box-sizing: border-box; }
 
-.reserve__input input,
-.reserve__input select {
-  appearance: none;
-  -webkit-appearance: none;
-  height: 36px;
-  border: 1px solid #bbb;
-  padding: 0 8px;
-  margin-bottom: 30px;
-  font-size: 1.6rem;
-  background: white;
-  border-radius: 4px; }
+a {
+  text-decoration: none;
+  color: inherit; }
 
-.reserve__input span {
-  font-size: 1.4rem;
-  margin-right: 16px;
-  margin-left: 2px; }
+html {
+  color: #000;
+  background: #fff;
+  font-size: 62.5%; }
 
-.reserve__input small {
-  white-space: pre; }
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0; }
 
-.reserve__input .form-name {
-  width: 100%; }
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
 
-.reserve__input .form-year {
-  width: 60px; }
+fieldset,
+img {
+  border: 0; }
 
-.reserve__input .form-month,
-.reserve__input .form-date {
-  width: 36px; }
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal; }
 
-.reserve__input .form-starttime-hour,
-.reserve__input .form-starttime-minute,
-.reserve__input .form-endtime-hour,
-.reserve__input .form-endtime-minute {
-  width: 36px;
-  margin-bottom: 40px; }
-ia screen and (max-width: 372px) {
+ol,
+ul {
+  list-style: none; }
+
+th {
+  text-align: left; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal; }
+
+input,
+textarea,
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none; }
+
+@font-face {
+  src: url("../../font/5.ttf");
+  font-family: 'logo'; }
+
+* {
+  font-family: Roboto, "Noto Sans JP", sans-serif; }
+
+@media screen and (max-width: 372px) {
   html,
   body {
     font-size: 56%; } }
