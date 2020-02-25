@@ -29,10 +29,6 @@
       font-size: 1.6rem;
       background: white;
       border-radius: 4px;
-
-      option {
-        text-align: center;
-      }
     }
 
     span {
@@ -42,7 +38,7 @@
     }
 
     small {
-      margin: 0 8px;
+      white-space: pre;
     }
 
     .form-name {
@@ -58,9 +54,11 @@
       width: 36px;
     }
 
-    .form-starttime,
-    .form-endtime {
-      width: 60px;
+    .form-starttime-hour,
+    .form-starttime-minute,
+    .form-endtime-hour,
+    .form-endtime-minute, {
+      width: 36px;
       margin-bottom: 40px;
     }
   }

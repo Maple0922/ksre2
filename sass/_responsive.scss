@@ -3,7 +3,7 @@ $layout_width_inner: 1180px;
 
 // ブレークポイント
 $breakpoints: (
-  "superMin": "screen and (max-width: 360px)",
+  "superMin": "screen and (max-width: 372px)",
   "sp": "screen and (max-width: 767px)",
   "tab": "screen and (max-width: #{$layout_width_inner - 1px})",
   "pc": "screen and (min-width: #{$layout_width_inner})",
