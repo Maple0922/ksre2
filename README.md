@@ -16,3 +16,7 @@
 `php -S localhost:8080`
 
 http://localhost:8080
+
+
+sqlite テーブル
+`CREATE TABLE IF NOT EXISTS "reserve" (id integer primary key autoincrement, name text, year integer, month integer, date integer, startTimeHour integer, startTimeMinute text, endTimeHour integer, endTimeMinute text);`
