@@ -289,6 +289,9 @@ button {
   overflow-y: scroll; }
   .table__data {
     border: 1px solid black; }
+    .table__data tr:first-child {
+      background: #153152;
+      color: white; }
     .table__data tr th,
     .table__data tr td {
       padding: 6px;

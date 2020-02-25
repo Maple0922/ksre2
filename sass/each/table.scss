@@ -7,6 +7,11 @@
     border: 1px solid black;
 
     tr {
+      &:first-child {
+        background: $sub-dakkblue;
+        color: white;
+      }
+
       th,
       td {
         padding: 6px;
