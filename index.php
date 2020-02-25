@@ -26,7 +26,7 @@
       $rowTime = null;
 
 
-      $db = new SQLite3("./db/reserve.sqlite3");
+      $db = new SQLite3("./db/database.sqlite3");
 
       $sqlYear = 'SELECT DISTINCT year
       FROM reserve
@@ -70,12 +70,12 @@
                 echo '</h3>';
 
                 foreach ($rowDate as $date) {
-                  $sqlTime = 'SELECT name, startTime, endTime
+                  $sqlTime = 'SELECT name, startTimeHour, startTimeMinute, endTimeHour, endTimeMinute
                   FROM reserve
                   WHERE year = "'.$year.'"
                   AND month = "'.$month.'"
                   AND date = "'.$date.'"
-                  ORDER BY startTime asc, id asc';
+                  ORDER BY startTimeHour asc, id asc';
 
                   $resTime = $db->query($sqlTime);
 
@@ -83,7 +83,8 @@
                   while ($rowTime = $resTime->fetchArray(1)) {
                     echo '<tr>';
                     echo '<td>'.$rowTime['name'].'</td>';
-                    echo '<td>'.$rowTime['startTime'].'~'.$rowTime['endTime'].'</td>';
+                    echo '<td>'.$rowTime['startTimeHour'].':'.$rowTime['startTimeMinute'].'~'.
+                                $rowTime['endTimeHour'].':'.$rowTime['endTimeMinute'].'</td>';
                     echo '<td><button type="text">編集</td>';
                     echo '</tr>';
                   }

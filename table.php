@@ -16,7 +16,7 @@
       $monthSql = null;
       $dateSql = null;
 
-      $db = new SQLite3("./db/reserve.sqlite3");
+      $db = new SQLite3("./db/database.sqlite3");
 
       $sql = 'SELECT * FROM reserve
               ORDER BY id desc';
@@ -38,11 +38,12 @@
         while($row = $res->fetchArray(2)) {
 
           echo "<tr>";
-          for ($i=0;$i<7;$i++) {
+          for ($i=0;$i<5;$i++) {
             echo '<td>'.$row[$i].'</td>';
           }
+          echo '<td>'.$row[5].':'.$row[6].'</td>';
+          echo '<td>'.$row[7].':'.$row[8].'</td>';
           echo "</tr>";
-
         }
         ?>
       </table>
