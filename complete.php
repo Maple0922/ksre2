@@ -19,9 +19,9 @@
           <p><?php echo $_POST['date']; ?></p>
           <span>日</span>
           <img src="images/clock.svg" class="clock">
-          <p><?php echo $_POST['startTime']; ?></p>
+          <p><?php echo $_POST['startTimeHour'] ,':',$_POST['startTimeMinute']; ?></p>
           <small>~</small>
-          <p><?php echo $_POST['endTime']; ?></p>
+          <p><?php echo $_POST['endTimeHour'] ,':',$_POST['endTimeMinute']; ?></p>
         </div>
         <p class="caption">
           上記の内容で予約が完了しました。
