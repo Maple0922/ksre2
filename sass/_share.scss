@@ -8,7 +8,7 @@ body {
 .main {
   margin-top: calc(#{$height-header + $height-sub-header});
   height: calc(100vh - #{$height-header + $height-sub-header});
-  font-size: 2rem;
+  font-size: 1.6rem;
 
   > div {
     max-width: 600px;

@@ -77,6 +77,7 @@
         <br>
         <button class='submit' type="submit">変更</button>
         <button class='delete' type="button">削除</button>
+        <button class='button-cancel' type="button" onclick='location.href="/list.php"'>一覧へ戻る</button>
       </form>
     </div>
   </main>

@@ -75,6 +75,7 @@
         </select>
         <br>
         <button class='button-primary' type="submit">予約</button>
+        <button class='button-cancel' type="button" onclick='location.href="/list.php"'>一覧へ戻る</button>
       </form>
     </div>
   </main>

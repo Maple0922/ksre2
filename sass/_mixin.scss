@@ -1,6 +1,6 @@
 @mixin basic-button($background, $color) {
   width: 80%;
-  margin: auto;
+  margin: 0 auto 16px;
   font-size: 1.5rem;
   display: block;
   height: $height-button;
@@ -16,5 +16,9 @@
 }
 
 @mixin button-cancel {
-  @include basic-button(#eee, $theme-blue);
+  @include basic-button(#eee, $gray);
+}
+
+@mixin button-danger {
+  @include basic-button($danger-red, $white);
 }
