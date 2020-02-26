@@ -8,13 +8,14 @@
 
     tr {
       &:first-child {
-        background: $sub-dakkblue;
+        background: $sub-darkblue;
         color: white;
       }
 
       th,
       td {
         padding: 6px;
+        height: 33px;
         border: 1px solid #bbb;
         text-align: center;
 

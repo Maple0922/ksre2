@@ -3,4 +3,7 @@
     <h1 class="header__title">TestApp</h1>
     <p class="header__description">くされエン部室予約アプリ</p>
   </a>
+  <a class="header__icon" href="/">
+    <img src="../images/home.svg">
+  </a>
 </header>
