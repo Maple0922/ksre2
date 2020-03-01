@@ -65,4 +65,24 @@
       }
     }
   }
+
+  .empty {
+    text-align: center;
+
+    &__logo {
+      width: 30px;
+      display: inline-block;
+      margin: 0 auto;
+      opacity: 0.5;
+      margin-top: 80px;
+      margin-bottom: 12px;
+    }
+
+    &__caption {
+      text-align: center;
+      width: 100%;
+      display: inline-block;
+      color: $gray;
+    }
+  }
 }

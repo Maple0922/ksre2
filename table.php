@@ -18,7 +18,8 @@
 
       $db = new SQLite3("./db/database.sqlite3");
 
-      $sql = 'SELECT * FROM reserve
+      $sql = 'SELECT *
+              FROM reserve
               ORDER BY id desc';
 
       $res = $db->query($sql);
@@ -35,15 +36,17 @@
         </tr>
 
         <?php
-        while($row = $res->fetchArray(2)) {
+        while($row = $res->fetchArray(SQLITE3_ASSOC)) {
 
-          echo "<tr>";
-          for ($i=0;$i<5;$i++) {
-            echo '<td>'.$row[$i].'</td>';
-          }
-          echo '<td>'.$row[5].':'.$row[6].'</td>';
-          echo '<td>'.$row[7].':'.$row[8].'</td>';
-          echo "</tr>";
+          echo '<tr>';
+          echo '<td>'.$row['id'].'</td>';
+          echo '<td>'.$row['name'].'</td>';
+          echo '<td>'.$row['year'].'</td>';
+          echo '<td>'.$row['month'].'</td>';
+          echo '<td>'.$row['date'].'</td>';
+          echo '<td>'.$row['startTimeHour'].':'.$row['startTimeMinute'].'</td>';
+          echo '<td>'.$row['endTimeHour'].':'.$row['endTimeMinute'].'</td>';
+          echo '</tr>';
         }
         ?>
       </table>

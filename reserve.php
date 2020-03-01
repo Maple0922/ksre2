@@ -10,7 +10,7 @@
         <label class="label-name"><img src="images/music.svg">バンド名</label>
         <input class='form-name' type="text" required
         placeholder="入力してください" name="name"
-        value="ポルカドットスティングレイ">
+        value="">
         <label class="label-date"><img src="images/calendar.svg">予約日</label>
         <select class="form-year" name="year" id="year">
           <?php

@@ -10,7 +10,7 @@
         <label class="label-name"><img src="images/person.svg">投稿者</label>
         <input class='form-name' type="text" required
         placeholder="入力してください" name="name"
-        value="野島輝">
+        value="">
         <label class="label-date"><img src="images/calendar.svg">投稿日</label>
         <select class="form-year" name="year" id="year">
           <?php
@@ -38,10 +38,11 @@
         </select>
         <span>日</span>
         <label class="label-title"><img src="images/pen.svg">件名</label>
-        <input type="text" class="form-title" name="title" placeholder="入力してください" value="">
+        <input type="text" class="form-title" name="title" placeholder="入力してください" value="" required>
         <label class="label-content"><img src="images/clipboard.svg">内容</label>
-        <textarea name="content"  class="form-content"></textarea>
+        <textarea name="content" placeholder="入力してください" class="form-content" required></textarea>
         <button class='button-primary' type="submit">送信</button>
+        <button class='button-cancel' type="button" onclick='location.href="/news.php"'>戻る</button>
       </form>
     </div>
   </main>

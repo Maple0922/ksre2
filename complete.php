@@ -28,9 +28,26 @@
           <br>
           予約の変更･削除は予約一覧からできます。
         </p>
-        <button class='button-primary' onclick='location.href="/"'>予約一覧へ</button>
+        <button class='button-primary' onclick='location.href="/list.php"'>予約一覧へ</button>
       </div>
     </div>
   </main>
+  <?php
+  $db = new SQLite3("./db/database.sqlite3");
+
+  $stmt = $db->prepare(
+    "INSERT INTO reserve (name, year, month, date, startTimeHour, startTimeMinute, endTimeHour, endTimeMinute)
+    VALUES (?,?,?,?,?,?,?,?)"
+  );
+  $stmt->bindValue(1, $_POST['name'], SQLITE3_TEXT);
+  $stmt->bindValue(2, $_POST['year'], SQLITE3_TEXT);
+  $stmt->bindValue(3, $_POST['month'], SQLITE3_TEXT);
+  $stmt->bindValue(4, $_POST['date'], SQLITE3_TEXT);
+  $stmt->bindValue(5, $_POST['startTimeHour'], SQLITE3_TEXT);
+  $stmt->bindValue(6, $_POST['startTimeMinute'], SQLITE3_TEXT);
+  $stmt->bindValue(7, $_POST['endTimeHour'], SQLITE3_TEXT);
+  $stmt->bindValue(8, $_POST['endTimeMinute'], SQLITE3_TEXT);
+  $stmt->execute();
+  ?>
 </body>
 </html>
