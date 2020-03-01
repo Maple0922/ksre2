@@ -93,7 +93,8 @@ button {
   font-family: Roboto, "Noto Sans JP", sans-serif; }
 
 @media screen and (max-width: 372px) {
-  html, body {
+  html,
+  body {
     font-size: 56%; } }
 
 .main {
@@ -142,6 +143,17 @@ button {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     background: #eee;
     color: #888; }
+  .main .button-danger {
+    width: 80%;
+    margin: 0 auto 16px;
+    font-size: 1.5rem;
+    display: block;
+    height: 40px;
+    border-radius: 4px;
+    max-width: 400px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    background: #bc6f59;
+    color: #fff; }
 
 .header {
   position: fixed;
@@ -269,22 +281,6 @@ button {
       .table__data tr td:nth-child(2) {
         width: 500px; }
 
-.complete__result label {
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin-bottom: 6px;
-  display: block;
-  line-height: 40px; }
-  .complete__result label img {
-    margin-right: 5px;
-    color: #555;
-    opacity: 0.7;
-    width: 28px;
-    padding: 3px;
-    font-size: 2rem;
-    position: relative;
-    top: 6px; }
-
 .complete__result > div {
   background-color: #eee;
   padding: 20px 16px;
@@ -329,16 +325,15 @@ button {
   font-weight: 400;
   margin-bottom: 6px;
   display: block;
-  line-height: 40px; }
+  line-height: 40px;
+  color: #444; }
   .edit__input label img {
     margin-right: 5px;
-    color: #555;
     opacity: 0.7;
     width: 28px;
     padding: 3px;
-    font-size: 2rem;
     position: relative;
-    top: 6px; }
+    top: 7px; }
 
 .edit__input input,
 .edit__input select {
@@ -351,9 +346,6 @@ button {
   font-size: 1.6rem;
   background: white;
   border-radius: 4px; }
-  .edit__input input option,
-  .edit__input select option {
-    text-align: center; }
 
 .edit__input span {
   font-size: 1.4rem;
@@ -361,7 +353,7 @@ button {
   margin-left: 2px; }
 
 .edit__input small {
-  margin: 0 8px; }
+  white-space: pre; }
 
 .edit__input .form-name {
   width: 100%; }
@@ -373,46 +365,40 @@ button {
 .edit__input .form-date {
   width: 36px; }
 
-.edit__input .form-starttime,
-.edit__input .form-endtime {
-  width: 60px;
+.edit__input .form-starttime-hour,
+.edit__input .form-starttime-minute,
+.edit__input .form-endtime-hour,
+.edit__input .form-endtime-minute {
+  width: 36px;
   margin-bottom: 40px; }
 
-.edit__input .submit {
-  border: none;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
-  appearance: none;
-  -webkit-appearance: none;
-  width: 80%;
-  margin: 0 auto 16px;
-  font-size: 1.5rem;
-  display: block;
-  height: 40px;
-  border-radius: 4px;
-  max-width: 400px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-  background: #5c74a4;
-  color: #fff; }
-
-.edit__input .delete {
-  border: none;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
-  appearance: none;
-  -webkit-appearance: none;
-  width: 80%;
-  margin: 0 auto 16px;
-  font-size: 1.5rem;
-  display: block;
-  height: 40px;
-  border-radius: 4px;
-  max-width: 400px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-  background: #bb7f69;
-  color: #fff; }
+.confirm {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background: #0009;
+  display: none; }
+  .confirm__dialog {
+    background: white;
+    width: 300px;
+    padding: 30px 20px 14px;
+    border-radius: 6px;
+    margin: auto;
+    position: relative;
+    top: 45%;
+    text-align: center; }
+    .confirm__dialog p {
+      margin-bottom: 30px; }
+  .confirm__buttons {
+    display: flex;
+    justify-content: space-between; }
+    .confirm__buttons #delete-button,
+    .confirm__buttons #close-button {
+      width: 42%; }
 
 .list {
   height: calc(100% - 80px);
@@ -443,17 +429,17 @@ button {
     font-size: 1.6rem;
     margin-bottom: 50px; }
     .list table tr td {
-      height: 30px;
-      line-height: 35px;
+      height: 38px;
       border: 1px solid #bbb;
       border-radius: 2px;
-      padding: 0 8px; }
+      padding: 6px 8px; }
       .list table tr td:nth-child(3n) {
         min-width: 50px;
         text-align: center;
         background: #153152; }
-        .list table tr td:nth-child(3n) button {
-          color: white; }
+        .list table tr td:nth-child(3n) a {
+          color: white;
+          font-size: 1.4rem; }
       .list table tr td:nth-child(3n+1) {
         width: 80%; }
       .list table tr td:nth-child(3n+2) {
@@ -461,6 +447,20 @@ button {
         width: 30%;
         max-width: 300px;
         min-width: 100px; }
+  .list .empty {
+    text-align: center; }
+    .list .empty__logo {
+      width: 30px;
+      display: inline-block;
+      margin: 0 auto;
+      opacity: 0.5;
+      margin-top: 80px;
+      margin-bottom: 12px; }
+    .list .empty__caption {
+      text-align: center;
+      width: 100%;
+      display: inline-block;
+      color: #888; }
 
 .post__input label {
   font-size: 1.8rem;
@@ -490,9 +490,12 @@ button {
   background: white;
   border-radius: 4px; }
 
+.post__input input {
+  width: 100%; }
+
 .post__input textarea {
   width: 100%;
-  height: 100px;
+  height: 200px;
   padding: 8px; }
 
 .post__input select {
@@ -509,7 +512,7 @@ button {
   white-space: pre; }
 
 .post__input .form-name {
-  width: 100%; }
+  width: 70%; }
 
 .post__input .form-year {
   width: 60px; }
@@ -518,9 +521,150 @@ button {
 .post__input .form-date {
   width: 36px; }
 
-.post__input .form-starttime-hour,
-.post__input .form-starttime-minute,
-.post__input .form-endtime-hour,
-.post__input .form-endtime-minute {
-  width: 36px;
-  margin-bottom: 40px; }
+.post__input .label-content img {
+  width: 26px; }
+
+.news {
+  height: calc(100% - 80px);
+  overflow-y: scroll; }
+  .news__item {
+    padding: 30px 14px;
+    border-top: 2px solid #153152;
+    background: #f4f4f4; }
+    .news__item:last-child {
+      border-bottom: 2px solid #153152; }
+    .news__item h2 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 24px; }
+      .news__item h2 img {
+        width: 24px;
+        margin-right: 10px;
+        opacity: 0.6;
+        position: relative;
+        top: 2px; }
+    .news__item p {
+      margin-bottom: 16px;
+      line-height: 1.6;
+      font-size: 1.4rem; }
+    .news__item h3,
+    .news__item h4 {
+      display: inline-block;
+      text-align: right;
+      color: #888; }
+      .news__item h3 img,
+      .news__item h4 img {
+        height: 20px;
+        position: relative;
+        margin-right: 6px;
+        opacity: 0.6; }
+    .news__item h3 {
+      width: 64%;
+      font-size: 1.4rem; }
+      .news__item h3 img {
+        top: 3px; }
+    .news__item h4 {
+      width: 36%;
+      min-width: 10px;
+      font-size: 1.5rem; }
+      .news__item h4 img {
+        top: 4px; }
+    .news__item .content {
+      white-space: pre-wrap; }
+  .news .empty {
+    text-align: center; }
+    .news .empty__logo {
+      width: 30px;
+      display: inline-block;
+      margin: 0 auto;
+      opacity: 0.5;
+      margin-top: 80px;
+      margin-bottom: 12px; }
+    .news .empty__caption {
+      text-align: center;
+      width: 100%;
+      display: inline-block;
+      color: #888; }
+
+.submit__result > div {
+  background-color: #eee;
+  padding: 20px 16px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  font-size: 0; }
+  .submit__result > div p {
+    font-weight: bold;
+    display: inline-block;
+    font-size: 1.6rem;
+    padding: 0;
+    line-height: 1.6;
+    color: #333; }
+  .submit__result > div img {
+    opacity: 0.7;
+    width: 28px;
+    padding: 3px;
+    position: relative;
+    top: 8px;
+    margin-right: 10px; }
+  .submit__result > div span {
+    font-size: 1.6rem;
+    margin-left: 2px;
+    margin-right: 5px;
+    color: #333; }
+  .submit__result > div .name {
+    margin-bottom: 10px;
+    color: #000;
+    position: relative;
+    top: 1px; }
+  .submit__result > div .title-logo {
+    margin-top: 10px; }
+  .submit__result > div .title {
+    margin-bottom: 10px; }
+  .submit__result > div .content-logo {
+    vertical-align: top; }
+  .submit__result > div .content {
+    margin-top: 14px;
+    width: calc(100% - 38px);
+    white-space: pre-wrap; }
+
+.update__result > div {
+  background-color: #eee;
+  padding: 20px 16px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  font-size: 0; }
+  .update__result > div p {
+    font-weight: bold;
+    display: inline-block;
+    font-size: 1.6rem;
+    padding: 0;
+    line-height: 1.6;
+    color: #333; }
+  .update__result > div img {
+    opacity: 0.7;
+    width: 28px;
+    padding: 3px;
+    position: relative;
+    top: 8px;
+    margin-right: 6px; }
+  .update__result > div span {
+    font-size: 1.4rem;
+    margin-left: 2px;
+    margin-right: 5px;
+    color: #333; }
+  .update__result > div small {
+    font-size: 1.4rem;
+    margin: 0 1px;
+    color: #777; }
+  .update__result > div .name {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #000;
+    position: relative;
+    top: 1px; }
+  .update__result > div .clock {
+    margin-right: 2px;
+    margin-left: 10px; }
+
+.delete {
+  display: block; }

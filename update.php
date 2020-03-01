@@ -2,11 +2,11 @@
 <body>
   <?php include 'common/header.php' ?>
   <section class="sub-header">
-    <h2 class="sub-header__title">予約完了</h2>
+    <h2 class="sub-header__title">変更完了</h2>
   </section>
   <main class="main">
-    <div class="complete">
-      <div class="complete__result">
+    <div class="update">
+      <div class="update__result">
         <div>
           <img src="images/music.svg">
           <p class="name"><?php echo $_POST['name']; ?></p>
@@ -24,7 +24,7 @@
           <p><?php echo $_POST['endTimeHour'] ,':',$_POST['endTimeMinute']; ?></p>
         </div>
         <p class="caption">
-          上記の内容で予約が完了しました。
+          上記の内容へ変更しました。
           <br>
           予約の変更･削除は予約一覧からできます。
         </p>
@@ -36,18 +36,29 @@
   $db = new SQLite3("./db/database.sqlite3");
 
   $stmt = $db->prepare(
-    "INSERT INTO reserve (name, year, month, date, startTimeHour, startTimeMinute, endTimeHour, endTimeMinute)
-    VALUES (?,?,?,?,?,?,?,?)"
+    'UPDATE reserve SET
+      name = :name,
+      year = :year,
+      month = :month,
+      date = :date,
+      startTimeHour = :startTimeHour,
+      startTimeMinute = :startTimeMinute,
+      endTimeHour = :endTimeHour,
+      endTimeMinute = :endTimeMinute
+     WHERE id = :id'
   );
-  $stmt->bindValue(1, $_POST['name'], SQLITE3_TEXT);
-  $stmt->bindValue(2, $_POST['year'], SQLITE3_TEXT);
-  $stmt->bindValue(3, $_POST['month'], SQLITE3_TEXT);
-  $stmt->bindValue(4, $_POST['date'], SQLITE3_TEXT);
-  $stmt->bindValue(5, $_POST['startTimeHour'], SQLITE3_TEXT);
-  $stmt->bindValue(6, $_POST['startTimeMinute'], SQLITE3_TEXT);
-  $stmt->bindValue(7, $_POST['endTimeHour'], SQLITE3_TEXT);
-  $stmt->bindValue(8, $_POST['endTimeMinute'], SQLITE3_TEXT);
+
+  $stmt->bindParam(':name', $_POST['name']);
+  $stmt->bindParam(':year', $_POST['year']);
+  $stmt->bindParam(':month', $_POST['month']);
+  $stmt->bindParam(':date', $_POST['date']);
+  $stmt->bindParam(':startTimeHour', $_POST['startTimeHour']);
+  $stmt->bindParam(':startTimeMinute', $_POST['startTimeMinute']);
+  $stmt->bindParam(':endTimeHour', $_POST['endTimeHour']);
+  $stmt->bindParam(':endTimeMinute', $_POST['endTimeMinute']);
+  $stmt->bindParam(':id', $_POST['id']);
   $stmt->execute();
+
   ?>
 </body>
 </html>

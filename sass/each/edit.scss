@@ -6,16 +6,15 @@
       margin-bottom: 6px;
       display: block;
       line-height: 40px;
+      color: #444;
 
       img {
         margin-right: 5px;
-        color: #555;
         opacity: 0.7;
         width: 28px;
         padding: 3px;
-        font-size: 2rem;
         position: relative;
-        top: 6px;
+        top: 7px;
       }
     }
 
@@ -30,10 +29,6 @@
       font-size: 1.6rem;
       background: white;
       border-radius: 4px;
-
-      option {
-        text-align: center;
-      }
     }
 
     span {
@@ -43,7 +38,7 @@
     }
 
     small {
-      margin: 0 8px;
+      white-space: pre;
     }
 
     .form-name {
@@ -59,34 +54,49 @@
       width: 36px;
     }
 
-    .form-starttime,
-    .form-endtime {
-      width: 60px;
+    .form-starttime-hour,
+    .form-starttime-minute,
+    .form-endtime-hour,
+    .form-endtime-minute, {
+      width: 36px;
       margin-bottom: 40px;
     }
+  }
+}
 
-    .submit {
-      // reset
-      border: none;
-      cursor: pointer;
-      outline: none;
-      padding: 0;
-      appearance: none;
-      -webkit-appearance: none;
-      // style
-      @include button-primary;
+.confirm {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background: #0009;
+  display: none;
+
+  &__dialog {
+    background: white;
+    width: 300px;
+    padding: 30px 20px 14px;
+    border-radius: 6px;
+    margin: auto;
+    position: relative;
+    top: 45%;
+    text-align: center;
+
+    p {
+      margin-bottom: 30px;
     }
+  }
 
-    .delete {
-      // reset
-      border: none;
-      cursor: pointer;
-      outline: none;
-      padding: 0;
-      appearance: none;
-      -webkit-appearance: none;
-      // style
-      @include button-danger;
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+
+    #delete-button,
+    #close-button {
+      width: 42%;
     }
   }
 }

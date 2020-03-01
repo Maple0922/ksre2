@@ -7,94 +7,86 @@
   <main class="main">
     <div class="list">
       <?php
-      // 変数の初期化
-      $db = null;
-
-      $sqlYear = null;
-      $sqlMonth = null;
-      $sqlDate = null;
-      $sqlTime = null;
-
-      $resYear = null;
-      $resMonth = null;
-      $resDate = null;
-      $resTime = null;
-
-      $rowYear = null;
-      $rowMonth = null;
-      $rowDate = null;
-      $rowTime = null;
-
 
       $db = new SQLite3("./db/database.sqlite3");
+      $sqlCount = "SELECT COUNT(*) FROM reserve";
+      $num = $db->querySingle($sqlCount);
 
-      $sqlYear = 'SELECT DISTINCT year
-      FROM reserve
-      -- 今の年以降のデータのみ取得
-      -- テスト段階では使わない
-      -- WHERE year >= "'.date("Y").'"
-      ORDER BY year asc';
+      if ($num) {
 
-      $resYear = $db->query($sqlYear);
+        $sqlYear = 'SELECT DISTINCT year
+        FROM reserve
+        WHERE year >= "'.date("Y").'"
+        ORDER BY year asc';
 
-      while($rowYear = $resYear->fetchArray(1)) {
+        $resYear = $db->query($sqlYear);
 
-        foreach ($rowYear as $year) {
-          $sqlMonth = 'SELECT DISTINCT month
-          FROM reserve
-          -- 今の年以降のデータのみ取得
-          -- テスト段階では使わない
-          -- AND month >= "'.date("n").'"
-          WHERE year = "'.$year.'"
-          ORDER BY month asc';
+        while($rowYear = $resYear->fetchArray(1)) {
 
-          $resMonth = $db->query($sqlMonth);
+          foreach ($rowYear as $year) {
+            $sqlMonth = 'SELECT DISTINCT month
+            FROM reserve
+            -- 今の年以降のデータのみ取得
+            -- テスト段階では使わない
+            WHERE year = "'.$year.'"
+            AND year = "'.date("Y").'"
+            AND month >= "'.date("n").'"
+            OR year = "'.$year.'"
+            AND year = "'.intval(date("Y")+1).'"
+            ORDER BY month asc';
 
-          while ($rowMonth = $resMonth->fetchArray(1)) {
-            echo '<h2>';
-            echo $rowYear['year'].'<span>年</span>'.$rowMonth['month'].'<span>月</span>';
-            echo '</h2>';
+            $resMonth = $db->query($sqlMonth);
 
-            foreach ($rowMonth as $month) {
-              $sqlDate = 'SELECT DISTINCT date
-              FROM reserve
-              WHERE year = "'.$year.'"
-              AND month = "'.$month.'"
-              ORDER BY date asc';
+            while ($rowMonth = $resMonth->fetchArray(1)) {
+              echo '<h2>';
+              echo $rowYear['year'].'<span>年</span>'.$rowMonth['month'].'<span>月</span>';
+              echo '</h2>';
 
-              $resDate = $db->query($sqlDate);
+              foreach ($rowMonth as $month) {
+                $sqlDate = 'SELECT DISTINCT date
+                FROM reserve
+                WHERE year = "'.$year.'"
+                AND month = "'.$month.'"
+                ORDER BY date asc';
 
-              while ($rowDate = $resDate->fetchArray(1)) {
-                echo '<h3>';
-                echo $rowDate['date'].'<span>日</span>';
-                echo '</h3>';
+                $resDate = $db->query($sqlDate);
 
-                foreach ($rowDate as $date) {
-                  $sqlTime = 'SELECT name, startTimeHour, startTimeMinute, endTimeHour, endTimeMinute
-                  FROM reserve
-                  WHERE year = "'.$year.'"
-                  AND month = "'.$month.'"
-                  AND date = "'.$date.'"
-                  ORDER BY startTimeHour asc, id asc';
+                while ($rowDate = $resDate->fetchArray(1)) {
+                  echo '<h3>';
+                  echo $rowDate['date'].'<span>日</span>';
+                  echo '</h3>';
 
-                  $resTime = $db->query($sqlTime);
+                  foreach ($rowDate as $date) {
+                    $sqlTime = 'SELECT id, name, startTimeHour, startTimeMinute, endTimeHour, endTimeMinute
+                    FROM reserve
+                    WHERE year = "'.$year.'"
+                    AND month = "'.$month.'"
+                    AND date = "'.$date.'"
+                    ORDER BY startTimeHour asc, id asc';
 
-                  echo '<table>';
-                  while ($rowTime = $resTime->fetchArray(1)) {
-                    echo '<tr>';
-                    echo '<td>'.$rowTime['name'].'</td>';
-                    echo '<td>'.$rowTime['startTimeHour'].':'.$rowTime['startTimeMinute'].'~'.
-                                $rowTime['endTimeHour'].':'.$rowTime['endTimeMinute'].'</td>';
-                    echo '<td><button type="text">編集</td>';
-                    echo '</tr>';
+                    $resTime = $db->query($sqlTime);
+
+                    echo '<table>';
+                    while ($rowTime = $resTime->fetchArray(1)) {
+                      echo '<tr>';
+                      echo '<td>'.$rowTime['name'].'</td>';
+                      echo '<td>'.$rowTime['startTimeHour'].':'.$rowTime['startTimeMinute'].'~'.
+                      $rowTime['endTimeHour'].':'.$rowTime['endTimeMinute'].'</td>';
+                      echo '<td><a href="edit.php?id='.$rowTime['id'].'">編集</a></td>';
+                      echo '</tr>';
+                    }
+                    echo '</table>';
                   }
-                  echo '</table>';
-
                 }
               }
             }
           }
         }
+      } else {
+        echo "<div class='empty'>";
+        echo "<img class='empty__logo' src='images/calendar.svg'>";
+        echo "<small class='empty__caption'>最近の予約はありません</small>";
+        echo "</div>";
       }
       ?>
 

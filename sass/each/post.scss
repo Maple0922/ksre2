@@ -32,9 +32,13 @@
       border-radius: 4px;
     }
 
+    input {
+      width: 100%;
+    }
+
     textarea {
       width: 100%;
-      height: 100px;
+      height: 200px;
       padding: 8px;
     }
 
@@ -55,7 +59,7 @@
     }
 
     .form-name {
-      width: 100%;
+      width: 70%;
     }
 
     .form-year {
@@ -67,12 +71,10 @@
       width: 36px;
     }
 
-    .form-starttime-hour,
-    .form-starttime-minute,
-    .form-endtime-hour,
-    .form-endtime-minute, {
-      width: 36px;
-      margin-bottom: 40px;
+    .label-content {
+      img {
+        width: 26px;
+      }
     }
   }
 }
