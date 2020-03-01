@@ -110,12 +110,24 @@
           echo ">30</option>";
           ?>
         </select>
+        <input type="hidden" required name="id"
+        value=<?php echo $result['id']; ?>>
         <br>
-        <button class='button-primary' type="submit">変更</button>
-        <button class='button-danger' type="button">削除</button>
+        <button class='button-primary' type="submit" formaction="update.php">変更</button>
+        <button class='button-danger' type="button" id="delete">削除</button>
         <button class='button-cancel' type="button" onclick='location.href="/list.php"'>一覧へ戻る</button>
+        <section class="confirm">
+          <div class="confirm__dialog">
+            <p>本当に削除してもよろしいですか？</p>
+            <div class="confirm__buttons">
+              <button class="button-danger" type="submit" id="delete-button" formaction="delete.php">削除する</button>
+              <button class="button-cancel" type="button" id="close-button">キャンセル</button>
+            </div>
+          </div>
+        </section>
       </form>
     </div>
   </main>
+  <script type="text/javascript" src="js/confirm.js"></script>
 </body>
 </html>
