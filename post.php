@@ -1,5 +1,6 @@
 <?php include 'common/head.php' ?>
 <body>
+  <script type="text/javascript" src="js/today.js"></script>
   <?php include 'common/header.php' ?>
   <section class="sub-header">
     <h2 class="sub-header__title">業務連絡投稿</h2>
@@ -46,6 +47,5 @@
       </form>
     </div>
   </main>
-  <script type="text/javascript" src="js/today.js"></script>
 </body>
 </html>

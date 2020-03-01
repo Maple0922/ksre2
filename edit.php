@@ -128,6 +128,5 @@
       </form>
     </div>
   </main>
-  <script type="text/javascript" src="js/confirm.js"></script>
 </body>
 </html>
