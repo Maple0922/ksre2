@@ -27,25 +27,25 @@ http://localhost:8080
 
 ### ホーム
 `index.php`
-
+<br>
 ### Reserve系
-`list.php`:一覧
-`reserve.php`:新規
-`complete.php`:完了
-`edit.php?id=:id`:変更(変更/削除)
-`update.php`:変更完了
-`delete.php`:削除完了
-
+`list.php`:一覧 <br>
+`reserve.php`:新規 <br>
+`complete.php`:完了 <br>
+`edit.php?id=:id`:変更(変更/削除) <br>
+`update.php`:変更完了 <br>
+`delete.php`:削除完了 <br>
+<br>
 ### News系
-`news.php`:一覧
-`post.php`:新規
-`submit.php`:完了
-`rewrite.php?id=:id`:編集(更新/削除)
-`renewal.php`:更新完了
-`erase.php`:削除完了
-
+`news.php`:一覧 <br>
+`post.php`:新規 <br>
+`submit.php`:完了 <br>
+`rewrite.php?id=:id`:編集(更新/削除) <br>
+`renewal.php`:更新完了 <br>
+`erase.php`:削除完了 <br>
+<br>
 ### Debug系
-`table.php`:reserveのデータ一覧
+`table.php`:reserveのデータ一覧 <br>
 
 <br><br>
 
