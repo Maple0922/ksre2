@@ -26,7 +26,7 @@ http://localhost:8080
 ## phpファイル構成
 
 ### ホーム
-`index.php`
+`index.php`:ホーム <br>
 <br>
 ### Reserve系
 `list.php`:一覧 <br>
