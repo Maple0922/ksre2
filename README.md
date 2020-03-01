@@ -1,6 +1,7 @@
 # ksre2
 くされエン部室予約アプリ
 
+<br><br>
 
 ## コマンド
 
@@ -20,6 +21,7 @@
 
 http://localhost:8080
 
+<br><br>
 
 ## phpファイル構成
 
@@ -45,6 +47,7 @@ http://localhost:8080
 ### Debug系
 `table.php`:reserveのデータ一覧
 
+<br><br>
 
 ## sqlite テーブル
 <br>
