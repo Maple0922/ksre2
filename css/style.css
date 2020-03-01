@@ -143,6 +143,17 @@ button {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     background: #eee;
     color: #888; }
+  .main .button-danger {
+    width: 80%;
+    margin: 0 auto 16px;
+    font-size: 1.5rem;
+    display: block;
+    height: 40px;
+    border-radius: 4px;
+    max-width: 400px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    background: #bc6f59;
+    color: #fff; }
 
 .header {
   position: fixed;
@@ -314,16 +325,15 @@ button {
   font-weight: 400;
   margin-bottom: 6px;
   display: block;
-  line-height: 40px; }
+  line-height: 40px;
+  color: #444; }
   .edit__input label img {
     margin-right: 5px;
-    color: #555;
     opacity: 0.7;
     width: 28px;
     padding: 3px;
-    font-size: 2rem;
     position: relative;
-    top: 6px; }
+    top: 7px; }
 
 .edit__input input,
 .edit__input select {
@@ -336,9 +346,6 @@ button {
   font-size: 1.6rem;
   background: white;
   border-radius: 4px; }
-  .edit__input input option,
-  .edit__input select option {
-    text-align: center; }
 
 .edit__input span {
   font-size: 1.4rem;
@@ -346,7 +353,7 @@ button {
   margin-left: 2px; }
 
 .edit__input small {
-  margin: 0 8px; }
+  white-space: pre; }
 
 .edit__input .form-name {
   width: 100%; }
@@ -358,46 +365,12 @@ button {
 .edit__input .form-date {
   width: 36px; }
 
-.edit__input .form-starttime,
-.edit__input .form-endtime {
-  width: 60px;
+.edit__input .form-starttime-hour,
+.edit__input .form-starttime-minute,
+.edit__input .form-endtime-hour,
+.edit__input .form-endtime-minute {
+  width: 36px;
   margin-bottom: 40px; }
-
-.edit__input .submit {
-  border: none;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
-  appearance: none;
-  -webkit-appearance: none;
-  width: 80%;
-  margin: 0 auto 16px;
-  font-size: 1.5rem;
-  display: block;
-  height: 40px;
-  border-radius: 4px;
-  max-width: 400px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-  background: #5c74a4;
-  color: #fff; }
-
-.edit__input .delete {
-  border: none;
-  cursor: pointer;
-  outline: none;
-  padding: 0;
-  appearance: none;
-  -webkit-appearance: none;
-  width: 80%;
-  margin: 0 auto 16px;
-  font-size: 1.5rem;
-  display: block;
-  height: 40px;
-  border-radius: 4px;
-  max-width: 400px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-  background: #bb7f69;
-  color: #fff; }
 
 .list {
   height: calc(100% - 80px);
@@ -428,17 +401,17 @@ button {
     font-size: 1.6rem;
     margin-bottom: 50px; }
     .list table tr td {
-      height: 30px;
-      line-height: 35px;
+      height: 38px;
       border: 1px solid #bbb;
       border-radius: 2px;
-      padding: 0 8px; }
+      padding: 6px 8px; }
       .list table tr td:nth-child(3n) {
         min-width: 50px;
         text-align: center;
         background: #153152; }
-        .list table tr td:nth-child(3n) button {
-          color: white; }
+        .list table tr td:nth-child(3n) a {
+          color: white;
+          font-size: 1.4rem; }
       .list table tr td:nth-child(3n+1) {
         width: 80%; }
       .list table tr td:nth-child(3n+2) {

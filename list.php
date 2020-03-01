@@ -57,7 +57,7 @@
                   echo '</h3>';
 
                   foreach ($rowDate as $date) {
-                    $sqlTime = 'SELECT DISTINCT name, startTimeHour, startTimeMinute, endTimeHour, endTimeMinute
+                    $sqlTime = 'SELECT id, name, startTimeHour, startTimeMinute, endTimeHour, endTimeMinute
                     FROM reserve
                     WHERE year = "'.$year.'"
                     AND month = "'.$month.'"
@@ -72,7 +72,7 @@
                       echo '<td>'.$rowTime['name'].'</td>';
                       echo '<td>'.$rowTime['startTimeHour'].':'.$rowTime['startTimeMinute'].'~'.
                       $rowTime['endTimeHour'].':'.$rowTime['endTimeMinute'].'</td>';
-                      echo '<td><button type="text">編集</button></td>';
+                      echo '<td><a href="edit.php?id='.$rowTime['id'].'">編集</a></td>';
                       echo '</tr>';
                     }
                     echo '</table>';
