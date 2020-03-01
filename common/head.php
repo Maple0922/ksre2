@@ -8,4 +8,5 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel=”icon” href=“icon/favicon.png”>
   <script src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/confirm.js"></script>
 </head>

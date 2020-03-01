@@ -47,4 +47,8 @@ body {
   .button-danger {
     @include button-danger;
   }
+
+  & + div {
+    display: none !important;
+  }
 }
