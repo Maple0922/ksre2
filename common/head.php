@@ -7,6 +7,7 @@
   <title>くされエン部室予約アプリ</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel=”icon” href=“icon/favicon.png”>
+  <link rel="apple-touch-icon" href="icon/favicon.png">
   <script src="js/jquery.js"></script>
   <script type="text/javascript" src="js/confirm.js"></script>
 </head>
