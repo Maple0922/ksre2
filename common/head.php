@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <meta name="apple-mobile-web-app-title" content="部室予約">
-  <title>くされエン部室予約アプリ</title>
+  <title>BUYO - くされエン部室予約サイト</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel=”icon” href=“icon/favicon.png”>
   <link rel="apple-touch-icon" href="icon/favicon.png">
