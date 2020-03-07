@@ -19,12 +19,13 @@ body {
   }
 
   > .footer {
+    width: 100%;
     height: $height-footer;
     background: $sub-blue;
-    opacity: 0.8;
     padding: 20px;
     box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
-    position: relative;
+    position: fixed;
+    bottom: 0;
     z-index: 900;
   }
 

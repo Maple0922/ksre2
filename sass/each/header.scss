@@ -5,7 +5,7 @@
   width: 100%;
   height: $height-header;
   background: $theme-blue;
-  padding: 20px 24px;
+  padding: 12px 24px 8px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
   top: 0;
   z-index: 1000;
@@ -15,26 +15,27 @@
   }
 
   &__title {
-    font-size: 3.6rem;
+    font-size: 2.8rem;
     color: $white;
     font-weight: 400;
-    letter-spacing: 2px;
-    line-height: 1;
-    margin-left: 4px;
+    letter-spacing: 4px;
+    line-height: 1.2;
+    margin-left: 20px;
     font-family: 'logo', sans-serif;
   }
 
   &__description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #dfe4f9;
     margin-left: 4px;
+    letter-spacing: -0.5px;
   }
 
   &__icon {
-    padding: 10px;
+    padding: 14px;
 
     img {
-      width: 36px;
+      width: 28px;
     }
   }
 }
@@ -49,8 +50,9 @@
   z-index: 900;
 
   &__title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: $height-sub-header;
+    color: $black;
     padding: 2px 20px 0;
     letter-spacing: 2px;
     font-weight: 400;
