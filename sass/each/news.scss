@@ -1,6 +1,5 @@
 .news {
-  height: calc(100% - #{$height-footer});
-  overflow-y: scroll;
+  padding-bottom: calc(#{$height-footer} + 24px) !important;
 
   &__item {
     padding: 30px 14px;

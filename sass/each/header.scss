@@ -20,8 +20,13 @@
     font-weight: 400;
     letter-spacing: 4px;
     line-height: 1.2;
-    margin-left: 20px;
+    margin-left: 18px;
     font-family: 'logo', sans-serif;
+
+    span {
+      letter-spacing: 3px;
+      font-family: 'logo', sans-serif;
+    }
   }
 
   &__description {
