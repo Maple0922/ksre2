@@ -72,7 +72,7 @@
                     WHERE year = "'.$year.'"
                     AND month = "'.$month.'"
                     AND date = "'.$date.'"
-                    ORDER BY startTimeHour asc, id asc';
+                    ORDER BY startTimeHour asc, startTimeMinute asc';
 
                     $resTime = $db->query($sqlTime);
 
