@@ -17,6 +17,9 @@
         DELETE FROM reserve
         WHERE year = "'.date("Y").'"
         AND month < "'.date("n").'"
+        OR year = "'.date("Y").'"
+        AND month = "'.date("n").'"
+        AND date < "'.date("j").'"
         OR year < "'.date("Y").'"
       ');
 
