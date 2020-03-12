@@ -1,2 +1,0 @@
-insert into news(name,year,month,date,title,content) values('中島楓人',2020,2,11,'お知らせ','こんにちは');
-insert into news(name,year,month,date,title,content) values('隋くん',2020,2,16,'お知らせ','半兵衛にいます');
