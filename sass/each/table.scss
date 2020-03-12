@@ -1,7 +1,6 @@
 .table {
-  height: calc(100% - #{$height-footer});
   font-size: 1.4rem;
-  overflow-y: scroll;
+  padding-bottom: calc(#{$height-footer} + 24px) !important;
 
   &__data {
     border: 1px solid black;
