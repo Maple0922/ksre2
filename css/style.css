@@ -118,6 +118,9 @@ input {
     box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
     position: fixed;
     bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     z-index: 900; }
   .main .caption {
     font-size: 1.4rem;
@@ -285,9 +288,8 @@ input {
   margin-bottom: 40px; }
 
 .table {
-  height: calc(100% - 80px);
   font-size: 1.4rem;
-  overflow-y: scroll; }
+  padding-bottom: calc(80px + 24px) !important; }
   .table__data {
     border: 1px solid black; }
     .table__data tr:first-child {
