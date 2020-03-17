@@ -50,6 +50,14 @@
       echo $message;
   }
 
+  $startTime = $_POST['startTimeHour'] . $_POST['startTimeMinute'];
+  $endTime   = $_POST['endTimeHour']   . $_POST['endTimeMinute'];
+
+  if ($startTime >= $endTime) {
+      $message = 'endtime is fast than starttime';
+      echo $message;
+  }
+
   $db = new SQLite3("./db/database.sqlite3");
 
   $stmt = $db->prepare(
