@@ -59,6 +59,12 @@
   }
 
   $db = new SQLite3("./db/database.sqlite3");
+  $sqlTable  = 'SELECT *
+                FROM reserve
+                WHERE year = "'.$_POST['year'].'"
+                AND month = "'.$_POST['month'].'"
+                AND date = "'.$_POST['date'].'" ';
+  $resTable = $db->query($sqlTable);
 
   $stmt = $db->prepare(
     "INSERT INTO reserve (name, year, month, date, startTimeHour, startTimeMinute, endTimeHour, endTimeMinute)
@@ -73,6 +79,18 @@
   $stmt->bindValue(7, $_POST['endTimeHour'], SQLITE3_TEXT);
   $stmt->bindValue(8, $_POST['endTimeMinute'], SQLITE3_TEXT);
   $stmt->execute();
+  while ($rowTable = $resTable->fetchArray(1)) {
+      
+      $reserveStartTime = $rowTable['startTimeHour'] . $rowTable['startTimeMinute'];
+      $reserveEndTime   = $rowTable['endTimeHour']   . $rowTable['endTimeMinute'];
+
+      if ($reserveStartTime < $endTime && $startTime < $reserveEndTime ) {
+
+          $message = 'The time is already reserved';
+          echo $message;
+      }
+  }
+
   ?>
 </body>
 </html>
