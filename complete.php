@@ -33,6 +33,8 @@
     </div>
   </main>
   <?php
+  $message = null;
+
   if (checkdate($_POST['month'], $_POST['date'], $_POST['year'])) {
       $message = null;
   } else {
