@@ -33,6 +33,13 @@
     </div>
   </main>
   <?php
+  if (checkdate($_POST['month'], $_POST['date'], $_POST['year'])) {
+      $message = null;
+  } else {
+      $message = 'The date is not exists!';
+      echo $message;
+  }
+
   $db = new SQLite3("./db/database.sqlite3");
 
   $stmt = $db->prepare(
