@@ -66,19 +66,6 @@
                 AND date = "'.$_POST['date'].'" ';
   $resTable = $db->query($sqlTable);
 
-  $stmt = $db->prepare(
-    "INSERT INTO reserve (name, year, month, date, startTimeHour, startTimeMinute, endTimeHour, endTimeMinute)
-    VALUES (?,?,?,?,?,?,?,?)"
-  );
-  $stmt->bindValue(1, $_POST['name'], SQLITE3_TEXT);
-  $stmt->bindValue(2, $_POST['year'], SQLITE3_TEXT);
-  $stmt->bindValue(3, $_POST['month'], SQLITE3_TEXT);
-  $stmt->bindValue(4, $_POST['date'], SQLITE3_TEXT);
-  $stmt->bindValue(5, $_POST['startTimeHour'], SQLITE3_TEXT);
-  $stmt->bindValue(6, $_POST['startTimeMinute'], SQLITE3_TEXT);
-  $stmt->bindValue(7, $_POST['endTimeHour'], SQLITE3_TEXT);
-  $stmt->bindValue(8, $_POST['endTimeMinute'], SQLITE3_TEXT);
-  $stmt->execute();
   while ($rowTable = $resTable->fetchArray(1)) {
       
       $reserveStartTime = $rowTable['startTimeHour'] . $rowTable['startTimeMinute'];
@@ -90,6 +77,22 @@
           echo $message;
       }
   }
+
+  if ($message == null) {
+            $stmt = $db->prepare(
+              "INSERT INTO reserve (name, year, month, date, startTimeHour, startTimeMinute, endTimeHour, endTimeMinute)
+              VALUES (?,?,?,?,?,?,?,?)"
+            );
+            $stmt->bindValue(1, $_POST['name'], SQLITE3_TEXT);
+            $stmt->bindValue(2, $_POST['year'], SQLITE3_TEXT);
+            $stmt->bindValue(3, $_POST['month'], SQLITE3_TEXT);
+            $stmt->bindValue(4, $_POST['date'], SQLITE3_TEXT);
+            $stmt->bindValue(5, $_POST['startTimeHour'], SQLITE3_TEXT);
+            $stmt->bindValue(6, $_POST['startTimeMinute'], SQLITE3_TEXT);
+            $stmt->bindValue(7, $_POST['endTimeHour'], SQLITE3_TEXT);
+            $stmt->bindValue(8, $_POST['endTimeMinute'], SQLITE3_TEXT);
+            $stmt->execute();
+        }
 
   ?>
 </body>
