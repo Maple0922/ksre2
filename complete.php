@@ -42,6 +42,14 @@
       echo $message;
   }
 
+  $dateToday = date('Ynd');
+  $dateReserve = $_POST['year'] . $_POST['month'] . $_POST['date'];
+
+  if ($dateReserve < $dateToday) {
+      $message = 'The date is too late!';
+      echo $message;
+  }
+
   $db = new SQLite3("./db/database.sqlite3");
 
   $stmt = $db->prepare(
