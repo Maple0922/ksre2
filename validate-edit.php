@@ -28,7 +28,8 @@ $sqlTable  = 'SELECT *
 FROM reserve
 WHERE year = "'.$_POST['year'].'"
 AND month = "'.$_POST['month'].'"
-AND date = "'.$_POST['date'].'" ';
+AND date = "'.$_POST['date'].'" '
+AND id != $_POST['id'];
 $resTable = $db->query($sqlTable);
 
 while ($rowTable = $resTable->fetchArray(1)) {
@@ -43,18 +44,29 @@ while ($rowTable = $resTable->fetchArray(1)) {
 }
 
 if ($_SESSION['message'] == null) {
+
   $stmt = $db->prepare(
-    "INSERT INTO reserve (name, year, month, date, startTimeHour, startTimeMinute, endTimeHour, endTimeMinute)
-    VALUES (?,?,?,?,?,?,?,?)"
+    'UPDATE reserve SET
+      name = :name,
+      year = :year,
+      month = :month,
+      date = :date,
+      startTimeHour = :startTimeHour,
+      startTimeMinute = :startTimeMinute,
+      endTimeHour = :endTimeHour,
+      endTimeMinute = :endTimeMinute
+     WHERE id = :id'
   );
-  $stmt->bindValue(1, $_POST['name'], SQLITE3_TEXT);
-  $stmt->bindValue(2, $_POST['year'], SQLITE3_TEXT);
-  $stmt->bindValue(3, $_POST['month'], SQLITE3_TEXT);
-  $stmt->bindValue(4, $_POST['date'], SQLITE3_TEXT);
-  $stmt->bindValue(5, $_POST['startTimeHour'], SQLITE3_TEXT);
-  $stmt->bindValue(6, $_POST['startTimeMinute'], SQLITE3_TEXT);
-  $stmt->bindValue(7, $_POST['endTimeHour'], SQLITE3_TEXT);
-  $stmt->bindValue(8, $_POST['endTimeMinute'], SQLITE3_TEXT);
+
+  $stmt->bindParam(':name', $_POST['name']);
+  $stmt->bindParam(':year', $_POST['year']);
+  $stmt->bindParam(':month', $_POST['month']);
+  $stmt->bindParam(':date', $_POST['date']);
+  $stmt->bindParam(':startTimeHour', $_POST['startTimeHour']);
+  $stmt->bindParam(':startTimeMinute', $_POST['startTimeMinute']);
+  $stmt->bindParam(':endTimeHour', $_POST['endTimeHour']);
+  $stmt->bindParam(':endTimeMinute', $_POST['endTimeMinute']);
+  $stmt->bindParam(':id', $_POST['id']);
   $stmt->execute();
 
   $_SESSION['name'] = $_POST['name'];
@@ -66,8 +78,8 @@ if ($_SESSION['message'] == null) {
   $_SESSION['endTimeHour'] = $_POST['endTimeHour'];
   $_SESSION['endTimeMinute'] = $_POST['endTimeMinute'];
 
-  $_SESSION['message'] = '上記の日程で予約が完了しました。<br>予約の変更･削除は予約一覧からできます。';
-  header( "Location: ./complete.php");
+  $_SESSION['message'] = '上記の内容へ変更しました。<br>予約の変更･削除は予約一覧からできます。';
+  header( "Location: ./update.php");
 } else {
   header( "Location: ./failed.php");
   exit;

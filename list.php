@@ -12,14 +12,14 @@
       $sqlCount = "SELECT COUNT(*) FROM reserve";
       $num = $db->querySingle($sqlCount);
 
-      // 先月以前のデータを削除
+      // 前日以前のデータを削除
       $stmt = $db->prepare('
         DELETE FROM reserve
         WHERE year = "'.date("Y").'"
         AND month < "'.date("n").'"
         OR year = "'.date("Y").'"
         AND month = "'.date("n").'"
-        AND date < "'.date("j").'"
+        AND date <= "'.date("j").'"
         OR year < "'.date("Y").'"
       ');
 

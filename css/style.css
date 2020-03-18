@@ -307,7 +307,7 @@ input {
 
 .complete__result > div {
   background-color: #eee;
-  padding: 20px 16px;
+  padding: 20px 10px;
   margin-bottom: 30px;
   border-radius: 4px;
   font-size: 0; }
@@ -320,7 +320,7 @@ input {
     color: #333; }
   .complete__result > div img {
     opacity: 0.7;
-    width: 28px;
+    width: 24px;
     padding: 3px;
     position: relative;
     top: 8px;
@@ -342,7 +342,7 @@ input {
     top: 1px; }
   .complete__result > div .clock {
     margin-right: 2px;
-    margin-left: 10px; }
+    margin-left: 2px; }
 
 .edit__input label {
   font-size: 1.8rem;
@@ -650,7 +650,7 @@ input {
 
 .update__result > div {
   background-color: #eee;
-  padding: 20px 16px;
+  padding: 20px 10px;
   margin-bottom: 30px;
   border-radius: 4px;
   font-size: 0; }
@@ -663,7 +663,7 @@ input {
     color: #333; }
   .update__result > div img {
     opacity: 0.7;
-    width: 28px;
+    width: 24px;
     padding: 3px;
     position: relative;
     top: 8px;
@@ -685,7 +685,7 @@ input {
     top: 1px; }
   .update__result > div .clock {
     margin-right: 2px;
-    margin-left: 10px; }
+    margin-left: 2px; }
 
 .delete {
   display: block; }

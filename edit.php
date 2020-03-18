@@ -113,7 +113,7 @@
         <input type="hidden" required name="id"
         value=<?php echo $result['id']; ?>>
         <br>
-        <button class='button-primary' type="submit" formaction="update.php">変更</button>
+        <button class='button-primary' type="submit" formaction="validate-edit.php">変更</button>
         <button class='button-danger' type="button" id="delete">削除</button>
         <button class='button-cancel' type="button" onclick='location.href="/list.php"'>一覧へ戻る</button>
         <section class="confirm">
