@@ -28,8 +28,8 @@ $sqlTable  = 'SELECT *
 FROM reserve
 WHERE year = "'.$_POST['year'].'"
 AND month = "'.$_POST['month'].'"
-AND date = "'.$_POST['date'].'" '
-AND id != $_POST['id'];
+AND date = "'.$_POST['date'].'"
+AND id != "'.$_POST['id'].'"';
 $resTable = $db->query($sqlTable);
 
 while ($rowTable = $resTable->fetchArray(1)) {
