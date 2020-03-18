@@ -12,6 +12,7 @@ body {
 
   > div {
     max-width: 600px;
+    min-height: 100%;
     margin: 0 auto;
     padding: 24px 20px;
     border-right: 3px solid #eee;
@@ -22,6 +23,7 @@ body {
     width: 100%;
     height: $height-footer;
     background: $sub-blue;
+    min-height: 0;
     padding: 20px;
     box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.2);
     position: fixed;
