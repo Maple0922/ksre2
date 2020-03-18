@@ -689,3 +689,11 @@ input {
 
 .delete {
   display: block; }
+
+.failed {
+  display: block; }
+  .failed__result .caption {
+    color: #f00;
+    background: #fcc;
+    border-radius: 4px;
+    padding: 10px 20px; }
