@@ -12,3 +12,4 @@
   <script type="text/javascript" src="js/confirm.js"></script>
   <script type="text/javascript" src="js/fade.js"></script>
 </head>
+<?php ini_set('date.timezone', 'Asia/Tokyo'); ?>
