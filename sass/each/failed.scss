@@ -1,0 +1,12 @@
+.failed {
+  display: block;
+
+  &__result {
+    .caption {
+      color: $text-red;
+      background: $background-red;
+      border-radius: 4px;
+      padding: 10px 20px;
+    }
+  }
+}
