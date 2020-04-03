@@ -15,7 +15,7 @@
           <p class="name"><?php echo $_SESSION['name']; ?></p>
           <br>
           <img src="images/calendar.svg">
-          <p><?php echo $_SESSION['year']; ?></p>
+          <p class="year"><?php echo $_SESSION['year']; ?></p>
           <span>年</span>
           <p><?php echo $_SESSION['month']; ?></p>
           <span>月</span>
@@ -25,6 +25,9 @@
           <p><?php echo $_SESSION['startTimeHour'] ,':',$_SESSION['startTimeMinute']; ?></p>
           <small>~</small>
           <p><?php echo $_SESSION['endTimeHour'] ,':',$_SESSION['endTimeMinute']; ?></p>
+          <br>
+          <img src="images/key.svg" class="key">
+          <p>****</p>
         </div>
         <p class="caption">
           <?php echo $_SESSION['message'] ?>

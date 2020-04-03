@@ -277,6 +277,15 @@ input {
   margin-bottom: 30px;
   color: gray; }
 
+.reserve__input .icons {
+  display: inline-block;
+  position: relative;
+  top: 4px;
+  right: 32px; }
+  .reserve__input .icons img {
+    opacity: 0.6;
+    width: 20px; }
+
 .reserve__input .form-name {
   width: 100%; }
 
@@ -296,7 +305,7 @@ input {
 
 .reserve__input .form-password {
   width: 100px;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   margin-bottom: 10px; }
 
 .table {
@@ -346,7 +355,8 @@ input {
     font-size: 1.4rem;
     margin: 0 1px;
     color: #777; }
-  .complete__result > div .name {
+  .complete__result > div .name,
+  .complete__result > div .year {
     font-size: 1.8rem;
     margin-bottom: 10px;
     color: #000;

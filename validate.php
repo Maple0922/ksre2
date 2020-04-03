@@ -44,8 +44,8 @@ while ($rowTable = $resTable->fetchArray(1)) {
 
 if ($_SESSION['message'] == null) {
   $stmt = $db->prepare(
-    "INSERT INTO reserve (name, year, month, date, startTimeHour, startTimeMinute, endTimeHour, endTimeMinute)
-    VALUES (?,?,?,?,?,?,?,?)"
+    "INSERT INTO reserve (name, year, month, date, startTimeHour, startTimeMinute, endTimeHour, endTimeMinute, password)
+    VALUES (?,?,?,?,?,?,?,?,?)"
   );
   $stmt->bindValue(1, $_POST['name'], SQLITE3_TEXT);
   $stmt->bindValue(2, $_POST['year'], SQLITE3_TEXT);
@@ -55,6 +55,7 @@ if ($_SESSION['message'] == null) {
   $stmt->bindValue(6, $_POST['startTimeMinute'], SQLITE3_TEXT);
   $stmt->bindValue(7, $_POST['endTimeHour'], SQLITE3_TEXT);
   $stmt->bindValue(8, $_POST['endTimeMinute'], SQLITE3_TEXT);
+  $stmt->bindValue(9, $_POST['password'], SQLITE3_TEXT);
   $stmt->execute();
 
   $_SESSION['name'] = $_POST['name'];
@@ -65,6 +66,7 @@ if ($_SESSION['message'] == null) {
   $_SESSION['startTimeMinute'] = $_POST['startTimeMinute'];
   $_SESSION['endTimeHour'] = $_POST['endTimeHour'];
   $_SESSION['endTimeMinute'] = $_POST['endTimeMinute'];
+  $_SESSION['password'] = $_POST['password'];
 
   $_SESSION['message'] = '上記の日程で予約が完了しました。<br>予約の変更･削除は予約一覧からできます。';
   header( "Location: ./complete.php");
