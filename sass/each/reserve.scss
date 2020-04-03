@@ -41,6 +41,12 @@
       white-space: pre;
     }
 
+    p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: gray;
+    }
+
     .form-name {
       width: 100%;
     }
@@ -60,6 +66,12 @@
     .form-endtime-minute, {
       width: 36px;
       margin-bottom: 40px;
+    }
+
+    .form-password {
+      width: 100px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
     }
   }
 }

@@ -74,7 +74,15 @@
           <option value='00' selected>00</option>
           <option value='30'>30</option>
         </select>
-        <br>
+        <label class="label-password"><img src="images/key.svg">パスワード</label>
+        <input class='form-password' type="password" id="number-password" required
+        placeholder="****" pattern="[0-9]{4}" maxlength="4" name="password" title="半角数字4桁で入力してください。(例:1846)"
+        value="">
+        <span class="field-icon">
+          <i toggle="password-field" class="mdi mdi-eye toggle-password"></i>
+        </span>
+        <p>予約内容の編集･削除時に必要なパスワードです。<br>半角数字4桁で入力してください。</p>
+        <script type="text/javascript" src="js/checkpass.js"></script>
         <button class='button-primary' type="submit">予約</button>
         <button class='button-cancel' type="button" onclick='location.href="/list.php"'>一覧へ戻る</button>
       </form>
