@@ -5,8 +5,21 @@ if (!checkdate($_POST['month'], $_POST['date'], $_POST['year'])) {
   $_SESSION['message'] = '存在する日付を入力してください。';
 }
 
-$dateToday = date('Ynd');
-$dateReserve = $_POST['year'] . $_POST['month'] . $_POST['date'];
+$dateToday = date('Ymd');
+
+if($_POST['month'] < 10){
+  $dateReserveMonth = '0'.$_POST['month'];
+}else{
+  $dateReserveMonth = $_POST['month'];
+}
+
+if($_POST['date'] < 10){
+  $dateReserveDate = '0'.$_POST['date'];
+}else{
+  $dateReserveDate = $_POST['date'];
+}
+
+$dateReserve = $_POST['year'] . $dateReserveMonth . $dateReserveDate;
 
 if ($dateReserve < $dateToday) {
   $_SESSION['message'] = '今日以降の日付を入力してください。';

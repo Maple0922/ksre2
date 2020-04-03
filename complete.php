@@ -1,7 +1,7 @@
+<?php session_start(); ?>
 <?php include 'common/head.php' ?>
 <body>
   <?php include 'common/header.php' ?>
-  <?php session_start(); ?>
   <section class="sub-header">
     <h2 class="sub-header__title">
       予約完了
