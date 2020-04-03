@@ -33,6 +33,7 @@
           <th>D</th>
           <th>Start</th>
           <th>End</th>
+          <th>Pass</th>
         </tr>
 
         <?php
@@ -46,6 +47,7 @@
           echo '<td>'.$row['date'].'</td>';
           echo '<td>'.$row['startTimeHour'].':'.$row['startTimeMinute'].'</td>';
           echo '<td>'.$row['endTimeHour'].':'.$row['endTimeMinute'].'</td>';
+          echo '<td>'.$row['password'].'</td>';
           echo '</tr>';
         }
         ?>
