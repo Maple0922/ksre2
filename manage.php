@@ -1,3 +1,5 @@
+<?php require_once 'functions.php'; ?>
+<?php midsummerNightsLewdDream(); ?>
 <?php include 'common/head.php' ?>
 <body>
   <?php include 'common/header.php' ?>
@@ -47,7 +49,7 @@
           echo '<td>'.$row['date'].'</td>';
           echo '<td>'.$row['startTimeHour'].':'.$row['startTimeMinute'].'</td>';
           echo '<td>'.$row['endTimeHour'].':'.$row['endTimeMinute'].'</td>';
-          echo '<td>'.$row['password'].'</td>';
+          echo '<td>'.$row['passcode'].'</td>';
           echo '</tr>';
         }
         ?>

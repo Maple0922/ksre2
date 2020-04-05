@@ -1,4 +1,4 @@
-$('#number-password').on("keypress", function(event){
+$('#number-passcode').on("keypress", function(event){
   return leaveOnlyNumber(event);
 });
 
