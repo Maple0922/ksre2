@@ -284,8 +284,7 @@ input {
       padding-right: 0;
       margin-bottom: 30px;
       height: 42px;
-      font-size: 2.6rem;
-      letter-spacing: 4px; }
+      font-size: 1.4rem; }
     .confirm__dialog p {
       margin-bottom: 30px; }
   .confirm__buttons {
@@ -363,7 +362,7 @@ input {
 
 .reserve__input .form-passcode {
   width: 100px;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   margin-bottom: 10px; }
 
 .table {
