@@ -89,7 +89,7 @@ input {
   line-height: 1.2; }
 
 @font-face {
-  src: url("../../font/5.ttf");
+  src: url("../../font/logo.ttf");
   font-family: 'logo'; }
 
 * {
