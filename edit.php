@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php require_once 'functions.php'; ?>
 <?php include 'common/head.php' ?>
 <body>
   <?php include 'common/header.php' ?>
@@ -6,14 +8,8 @@
   </section>
   <main class="main">
     <div class="edit">
-      <?php
-      $db = new PDO("sqlite:./db/database.sqlite3");
-      $stmt = $db->query('SELECT * FROM reserve WHERE id = :id');
-      $stmt->execute(array(':id' => $_GET["id"]));
-      $result = $stmt->fetch(PDO::FETCH_ASSOC);
-      ?>
-
-      <form method="post" class="edit__input">
+      <?php $result = getDataById(); ?>
+      <form method="post" class="form" action="check.php">
         <label for="name" class="label-name"><img src="images/music.svg">バンド名</label>
         <input class='form-name' type="text" required
         placeholder="入力してください" name="name"
@@ -113,14 +109,22 @@
         <input type="hidden" required name="id"
         value=<?php echo $result['id']; ?>>
         <br>
-        <button class='button-primary' type="submit" formaction="validate-edit.php">変更</button>
+        <div class="error">
+          <?php showError(); ?>
+        </div>
+        <button class='button-primary' type="button" id="update">変更</button>
         <button class='button-danger' type="button" id="delete">削除</button>
         <button class='button-cancel' type="button" onclick='location.href="/list.php"'>一覧へ戻る</button>
         <section class="confirm">
           <div class="confirm__dialog">
-            <p>本当に削除してもよろしいですか？</p>
+            <p>パスコードを入れてください</p>
+            <input class='form-passcode' type="text" id="number-passcode" required
+            placeholder="****" pattern="[0-9]{4}" maxlength="4" name="passcode" title="半角数字4桁で入力してください。(例:1846)"
+            value="">
+            <script type="text/javascript" src="js/checkpass.js"></script>
             <div class="confirm__buttons">
-              <button class="button-danger" type="submit" id="delete-button" formaction="delete.php">削除する</button>
+              <button class="button-primary" type="submit" id="update-button" name="action" value="update">変更する</button>
+              <button class="button-danger" type="submit" id="delete-button" name="action" value="delete">削除する</button>
               <button class="button-cancel" type="button" id="close-button">キャンセル</button>
             </div>
           </div>

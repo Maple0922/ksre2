@@ -14,15 +14,5 @@
       </div>
     </div>
   </main>
-  <?php
-  $db = new SQLite3("./db/database.sqlite3");
-
-  $stmt = $db->prepare(
-    "DELETE FROM reserve WHERE id = :id"
-  );
-  
-  $stmt->bindParam(':id', $_POST['id']);
-  $stmt->execute();
-  ?>
 </body>
 </html>

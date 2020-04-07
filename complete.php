@@ -1,10 +1,12 @@
+<?php session_start(); ?>
+<?php require_once 'functions.php'; ?>
+<?php redirectTopPage(); ?>
 <?php include 'common/head.php' ?>
 <body>
   <?php include 'common/header.php' ?>
-  <?php session_start(); ?>
   <section class="sub-header">
     <h2 class="sub-header__title">
-      予約完了
+      <?php echo $_SESSION['title']; ?>
     </h2>
   </section>
   <main class="main">
@@ -15,19 +17,22 @@
           <p class="name"><?php echo $_SESSION['name']; ?></p>
           <br>
           <img src="images/calendar.svg">
-          <p><?php echo $_SESSION['year']; ?></p>
+          <p class="year"><?php echo $_SESSION['year']; ?></p>
           <span>年</span>
-          <p><?php echo $_SESSION['month']; ?></p>
+          <p class="month"><?php echo $_SESSION['month']; ?></p>
           <span>月</span>
-          <p><?php echo $_SESSION['date']; ?></p>
+          <p class="date"><?php echo $_SESSION['date']; ?></p>
           <span>日</span>
           <img src="images/clock.svg" class="clock">
           <p><?php echo $_SESSION['startTimeHour'] ,':',$_SESSION['startTimeMinute']; ?></p>
           <small>~</small>
           <p><?php echo $_SESSION['endTimeHour'] ,':',$_SESSION['endTimeMinute']; ?></p>
+          <br>
+          <img src="images/key.svg" class="key">
+          <p><?php echo $_SESSION['passcode'] ?></p>
         </div>
         <p class="caption">
-          <?php echo $_SESSION['message'] ?>
+          <?php echo $_SESSION['message'][0]; ?>
         </p>
         <button class='button-primary' onclick='location.href="/list.php"'>予約一覧へ</button>
       </div>

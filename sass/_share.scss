@@ -42,6 +42,22 @@ body {
     margin-bottom: 30px;
   }
 
+  .error {
+    display: block;
+    width: 100%;
+    background: $background-red;
+    border-radius: 4px;
+    margin-bottom: 30px;
+
+    p {
+      font-size: 1.4rem;
+      line-height: 1.4;
+      color: $text-red;
+      padding: 14px 20px;
+      margin: 0;
+    }
+  }
+
   .button-primary {
     @include button-primary;
   }

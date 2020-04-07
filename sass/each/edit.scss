@@ -1,5 +1,5 @@
 .edit {
-  &__input {
+  .form {
     label {
       font-size: 1.8rem;
       font-weight: 400;
@@ -61,6 +61,15 @@
       width: 36px;
       margin-bottom: 40px;
     }
+
+    .form-passcode {
+      width: 108px;
+      padding-right: 0;
+      letter-spacing: 10px;
+      margin-bottom: 30px;
+      height: 42px;
+      font-size: 2.4rem;
+    }
   }
 }
 
@@ -96,8 +105,14 @@
     justify-content: space-between;
 
     #delete-button,
+    #update-button,
     #close-button {
       width: 42%;
+    }
+
+    #delete-button,
+    #update-button {
+      display: none;
     }
   }
 }
