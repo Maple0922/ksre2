@@ -1,5 +1,19 @@
 <?php
 
+// validate()内でDB内の年月日を8桁にフォーマットする
+function formatDate($year,$month,$date){
+  if($month < 10){
+    $month = '0'.$month;
+  }
+
+  if($date < 10){
+    $date = '0'.$date;
+  }
+
+  $formatDate = $year.$month.$date;
+  return $formatDate;
+}
+
 // insert,update時のvalidation
 function validate(){
 
@@ -7,22 +21,8 @@ function validate(){
     $_SESSION['message'][] = '存在する日付を入力してください。';
   }
 
-  ini_set('date.timezone', 'Asia/Tokyo');
   $dateToday = date('Ymd');
-
-  if($_POST['month'] < 10){
-    $dateReserveMonth = '0'.$_POST['month'];
-  }else{
-    $dateReserveMonth = $_POST['month'];
-  }
-
-  if($_POST['date'] < 10){
-    $dateReserveDate = '0'.$_POST['date'];
-  }else{
-    $dateReserveDate = $_POST['date'];
-  }
-
-  $dateReserve = $_POST['year'] . $dateReserveMonth . $dateReserveDate;
+  $dateReserve = formatDate($_POST['year'],$_POST['month'],$_POST['date']);
 
   if ($dateReserve < $dateToday) {
     $_SESSION['message'][] = '今日以降の日付を入力してください。';
@@ -55,7 +55,7 @@ function validate(){
 
     if ($reserveStartTime < $endTime && $startTime < $reserveEndTime ) {
 
-      $_SESSION['message'][] = 'すでに予約されている時間です。<br>予約一覧を確認してください。';
+      $_SESSION['message'][] = 'すでに予約されている時間です。<br>予約一覧を確認してください。'.$dateReserve;
     }
   }
 

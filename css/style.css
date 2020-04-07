@@ -249,7 +249,7 @@ input {
       top: 3px;
       margin-right: 16px; }
 
-.confirm {
+.index .confirm {
   width: 100%;
   height: 100vh;
   margin: auto;
@@ -259,7 +259,7 @@ input {
   z-index: 10000;
   background: #0009;
   display: none; }
-  .confirm input {
+  .index .confirm input {
     appearance: none;
     -webkit-appearance: none;
     height: 36px;
@@ -269,7 +269,7 @@ input {
     font-size: 1.6rem;
     background: white;
     border-radius: 4px; }
-  .confirm__dialog {
+  .index .confirm__dialog {
     background: white;
     width: 300px;
     padding: 30px 20px 14px;
@@ -279,19 +279,19 @@ input {
     top: 50%;
     transform: translateY(-50%);
     text-align: center; }
-    .confirm__dialog .form-password {
+    .index .confirm__dialog .form-password {
       width: 90%;
       padding-right: 0;
       margin-bottom: 30px;
       height: 42px;
       font-size: 1.4rem; }
-    .confirm__dialog p {
+    .index .confirm__dialog p {
       margin-bottom: 30px; }
-  .confirm__buttons {
+  .index .confirm__buttons {
     display: flex;
     justify-content: space-between; }
-    .confirm__buttons #login-button,
-    .confirm__buttons #close-button {
+    .index .confirm__buttons #login-button,
+    .index .confirm__buttons #close-button {
       width: 42%; }
 
 .reserve__input label {
