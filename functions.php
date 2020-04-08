@@ -55,7 +55,7 @@ function validate(){
 
     if ($reserveStartTime < $endTime && $startTime < $reserveEndTime ) {
 
-      $_SESSION['message'][] = 'すでに予約されている時間です。<br>予約一覧を確認してください。'.$dateReserve;
+      $_SESSION['message'][] = 'すでに予約されている時間です。<br>予約一覧を確認してください。';
     }
   }
 
