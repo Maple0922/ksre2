@@ -39,6 +39,14 @@ td {
   margin: 0;
   padding: 0; }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type="number"] {
+  -moz-appearance: textfield; }
+
 table {
   border-collapse: collapse;
   border-spacing: 0; }
@@ -135,7 +143,7 @@ input {
     width: 100%;
     background: #fcc;
     border-radius: 4px;
-    margin-bottom: 30px; }
+    margin-bottom: 12px; }
     .main .error p {
       font-size: 1.4rem;
       line-height: 1.4;
@@ -361,9 +369,10 @@ input {
   margin-bottom: 40px; }
 
 .reserve__input .form-passcode {
-  width: 100px;
+  width: 62px;
   letter-spacing: 2px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  padding-right: 0; }
 
 .table {
   font-size: 1.2rem;

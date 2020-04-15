@@ -118,7 +118,7 @@
         <section class="confirm">
           <div class="confirm__dialog">
             <p>パスコードを入れてください</p>
-            <input class='form-passcode' type="text" id="number-passcode" required
+            <input class='form-passcode' type="text" inputmode="numeric" id="number-passcode" required
             placeholder="****" pattern="[0-9]{4}" maxlength="4" name="passcode" title="半角数字4桁で入力してください。(例:1846)"
             value="">
             <script type="text/javascript" src="js/checkpass.js"></script>
