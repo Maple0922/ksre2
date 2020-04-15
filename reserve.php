@@ -10,6 +10,9 @@
   <main class="main">
     <div class="reserve">
       <form method="post" class="reserve__input" action="check.php">
+        <div class="error">
+          <?php showError(); ?>
+        </div>
         <label class="label-name"><img src="images/music.svg">バンド名</label>
         <input class='form-name' type="text" required
         placeholder="入力してください" name="name"
@@ -84,9 +87,6 @@
           <img class="hide-icon" src="images/eye-off.svg">
         </span>
         <p>予約内容の編集･削除時に必要なパスコードです。<br>半角数字4桁で入力してください。</p>
-        <div class="error">
-          <?php showError(); ?>
-        </div>
         <button class='button-primary' type="submit" name="action" value="insert">予約</button>
         <button class='button-cancel' type="button" onclick='location.href="/list.php"'>一覧へ戻る</button>
       </form>

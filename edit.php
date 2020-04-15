@@ -10,6 +10,9 @@
     <div class="edit">
       <?php $result = getDataById(); ?>
       <form method="post" class="form" action="check.php">
+        <div class="error">
+          <?php showError(); ?>
+        </div>
         <label for="name" class="label-name"><img src="images/music.svg">バンド名</label>
         <input class='form-name' type="text" required
         placeholder="入力してください" name="name"
@@ -109,9 +112,6 @@
         <input type="hidden" required name="id"
         value=<?php echo $result['id']; ?>>
         <br>
-        <div class="error">
-          <?php showError(); ?>
-        </div>
         <button class='button-primary' type="button" id="update">変更</button>
         <button class='button-danger' type="button" id="delete">削除</button>
         <button class='button-cancel' type="button" onclick='location.href="/list.php"'>一覧へ戻る</button>
