@@ -254,17 +254,18 @@ function send_to_slack($text, $attachment_color){
       ]
   ]; 
 
-  $options = array(
-    'http' => array(
-      'method' => 'POST',
-      'header' => 'Content-Type: application/json',
-      'content' => json_encode($message),
-    )
-  );
+  $data_json = json_encode($message);
 
-  $response = file_get_contents($webhook_url, false, stream_context_create($options));
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_URL, 'https://hooks.slack.com/services/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');
+  $result=curl_exec($ch);
+  echo 'RETURN:'.$result;
+  curl_close($ch);
 
-  return $response === 'ok';
 }
 
 ?>
