@@ -111,6 +111,8 @@ function insert(){
   $_SESSION['endTimeMinute'] = $_POST['endTimeMinute'];
   $_SESSION['passcode'] = $_POST['passcode'];
 
+  $_POST['id'] = ($db->lastInsertRowID());
+
   $_SESSION['title'] = '予約完了';
   $_SESSION['message'][] = '上記の日程で予約が完了しました。<br>予約の変更･削除は予約一覧からできます。';
 }
