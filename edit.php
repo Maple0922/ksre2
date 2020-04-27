@@ -10,6 +10,9 @@
     <div class="edit">
       <?php $result = getDataById(); ?>
       <form method="post" class="form" action="check.php">
+        <div class="error">
+          <?php showError(); ?>
+        </div>
         <label for="name" class="label-name"><img src="images/music.svg">バンド名</label>
         <input class='form-name' type="text" required
         placeholder="入力してください" name="name"
@@ -109,16 +112,13 @@
         <input type="hidden" required name="id"
         value=<?php echo $result['id']; ?>>
         <br>
-        <div class="error">
-          <?php showError(); ?>
-        </div>
         <button class='button-primary' type="button" id="update">変更</button>
         <button class='button-danger' type="button" id="delete">削除</button>
         <button class='button-cancel' type="button" onclick='location.href="/list.php"'>一覧へ戻る</button>
         <section class="confirm">
           <div class="confirm__dialog">
             <p>パスコードを入れてください</p>
-            <input class='form-passcode' type="text" id="number-passcode" required
+            <input class='form-passcode' type="text" inputmode="numeric" id="number-passcode" required
             placeholder="****" pattern="[0-9]{4}" maxlength="4" name="passcode" title="半角数字4桁で入力してください。(例:1846)"
             value="">
             <script type="text/javascript" src="js/checkpass.js"></script>

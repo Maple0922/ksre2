@@ -10,6 +10,9 @@
   <main class="main">
     <div class="reserve">
       <form method="post" class="reserve__input" action="check.php">
+        <div class="error">
+          <?php showError(); ?>
+        </div>
         <label class="label-name"><img src="images/music.svg">バンド名</label>
         <input class='form-name' type="text" required
         placeholder="入力してください" name="name"
@@ -75,18 +78,11 @@
           <option value='30'>30</option>
         </select>
         <label class="label-passcode"><img src="images/key.svg">パスコード</label>
-        <input class='form-passcode' type="password" id="number-passcode" required
+        <input class='form-passcode' type="text" inputmode="numeric" id="number-passcode" required
         placeholder="****" pattern="[0-9]{4}" maxlength="4" name="passcode" title="半角数字4桁で入力してください。(例:1846)"
         value="">
         <script type="text/javascript" src="js/checkpass.js"></script>
-        <span class="icons">
-          <img class="show-icon" src="images/eye.svg">
-          <img class="hide-icon" src="images/eye-off.svg">
-        </span>
         <p>予約内容の編集･削除時に必要なパスコードです。<br>半角数字4桁で入力してください。</p>
-        <div class="error">
-          <?php showError(); ?>
-        </div>
         <button class='button-primary' type="submit" name="action" value="insert">予約</button>
         <button class='button-cancel' type="button" onclick='location.href="/list.php"'>一覧へ戻る</button>
       </form>
