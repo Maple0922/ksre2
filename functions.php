@@ -229,4 +229,42 @@ function midsummerNightsLewdDream(){
   }
 }
 
+
+function send_to_slack($text, $attachment_color){
+  $startTime = $_POST['startTimeHour'] .':'. $_POST['startTimeMinute'];
+  $endTime   = $_POST['endTimeHour']   .':'. $_POST['endTimeMinute'];
+
+  $webhook_url = 'https://hooks.slack.com/services/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';
+
+  $message = [
+      'text' => $text,
+      'attachments' => [
+          [
+              'color' => $attachment_color,
+              'fields' => [
+                  [
+                      'title' => 'バンド名: '.$_POST['name'],
+                      'value' => '時間: '.$_POST['month'].'月'.$_POST['date'].'日  '.$startTime.'~'.$endTime,
+                  ],
+                  [
+                      'value' => 'id: '.$_POST['id'].'  パスワード: '.$_POST['passcode'],
+                  ]
+              ]
+          ]
+      ]
+  ]; 
+
+  $options = array(
+    'http' => array(
+      'method' => 'POST',
+      'header' => 'Content-Type: application/json',
+      'content' => json_encode($message),
+    )
+  );
+
+  $response = file_get_contents($webhook_url, false, stream_context_create($options));
+
+  return $response === 'ok';
+}
+
 ?>
