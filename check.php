@@ -10,6 +10,7 @@ switch ($process) {
   case 'insert':
   if (validate()){
     insert();
+    send_to_slack('予約されました。', 'good');
     header("Location: ./complete.php");
     exit;
     break;
@@ -22,6 +23,7 @@ switch ($process) {
   if (checkPass()){
     if (validate()){
       update();
+      send_to_slack('更新されました。', 'warning');
       header("Location: ./complete.php");
       exit;
       break;
@@ -36,6 +38,7 @@ switch ($process) {
   case 'delete':
   if (checkPass()){
     delete();
+    send_to_slack('削除されました。', 'danger');
     header("Location: ./delete.php");
     exit;
     break;

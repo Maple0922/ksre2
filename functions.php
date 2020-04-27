@@ -111,6 +111,8 @@ function insert(){
   $_SESSION['endTimeMinute'] = $_POST['endTimeMinute'];
   $_SESSION['passcode'] = $_POST['passcode'];
 
+  $_POST['id'] = ($db->lastInsertRowID());
+
   $_SESSION['title'] = '予約完了';
   $_SESSION['message'][] = '上記の日程で予約が完了しました。<br>予約の変更･削除は予約一覧からできます。';
 }
@@ -225,6 +227,44 @@ function midsummerNightsLewdDream(){
   if($_POST['password'] !== 'Yaju1145141919'){
     header('Location: https://video.fc2.com/ja/a/content/20160108UY6GqyWS');
   }
+}
+
+
+function send_to_slack($text, $attachment_color){
+  $startTime = $_POST['startTimeHour'] .':'. $_POST['startTimeMinute'];
+  $endTime   = $_POST['endTimeHour']   .':'. $_POST['endTimeMinute'];
+
+  $webhook_url = 'https://hooks.slack.com/services/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';
+
+  $message = [
+      'text' => $text,
+      'attachments' => [
+          [
+              'color' => $attachment_color,
+              'fields' => [
+                  [
+                      'title' => 'バンド名: '.$_POST['name'],
+                      'value' => '時間: '.$_POST['month'].'月'.$_POST['date'].'日  '.$startTime.'~'.$endTime,
+                  ],
+                  [
+                      'value' => 'id: '.$_POST['id'].'  パスワード: '.$_POST['passcode'],
+                  ]
+              ]
+          ]
+      ]
+  ]; 
+
+  $options = array(
+    'http' => array(
+      'method' => 'POST',
+      'header' => 'Content-Type: application/json',
+      'content' => json_encode($message),
+    )
+  );
+
+  $response = file_get_contents($webhook_url, false, stream_context_create($options));
+
+  return $response === 'ok';
 }
 
 ?>
