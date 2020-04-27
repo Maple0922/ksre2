@@ -276,7 +276,7 @@ function send_to_line($status_message){
   $reserveDate = $_POST['month'].'月'.$_POST['date'].'日 ';
 
   if ($status_message == '削除') {
-    $text = 'の「'.$_POST['name'].'」が削除しました。';
+    $text = 'の「'.$_POST['name'].'」を削除しました。';
   } else {
     $text = 'に「'.$_POST['name'].'」を'.$status_message.'しました。';
   }
