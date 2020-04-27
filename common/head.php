@@ -6,7 +6,7 @@
   <meta name="apple-mobile-web-app-title" content="部室予約">
   <title>BUYO - くされエン部室予約サイト</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel=”icon” href=“icon/favicon.png”>
+  <link rel="icon" href="icon/favicon.png">
   <link rel="apple-touch-icon" href="icon/favicon.png">
   <script src="js/jquery.js"></script>
   <script type="text/javascript" src="js/confirm.js"></script>
