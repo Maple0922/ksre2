@@ -234,7 +234,7 @@ function send_to_slack($text, $attachment_color){
   $startTime = $_POST['startTimeHour'] .':'. $_POST['startTimeMinute'];
   $endTime   = $_POST['endTimeHour']   .':'. $_POST['endTimeMinute'];
 
-  $webhook_url = 'https://hooks.slack.com/services/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';
+  $webhook_url = 'https://hooks.slack.com/services/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';
 
   $message = [
       'text' => $text,
