@@ -7,11 +7,11 @@
   <main class="main">
     <div class="index">
       <ul>
-        <li><a href="/list.php"><img src="images/calendar.svg">予約一覧</a></li>
-        <li><a href="/reserve.php"><img src="images/music.svg">部室予約</a></li>
-        <li><a href="/news.php"><img src="images/clipboard.svg">業務連絡</a></li>
-        <li><a href="/post.php"><img src="images/pen.svg">業務連絡投稿</a></li>
-        <li><a id="manage"><img src="images/key.svg">管理者用</a></li>
+        <li><a href="/list.php"><img src="images/calendarW.svg">予約一覧</a></li>
+        <li><a href="/reserve.php"><img src="images/musicW.svg">部室予約</a></li>
+        <li><a href="/news.php"><img src="images/clipboardW.svg">業務連絡</a></li>
+        <li><a href="/post.php"><img src="images/penW.svg">業務連絡投稿</a></li>
+        <li><a id="manage"><img src="images/keyW.svg">管理者用</a></li>
       </ul>
       <form action="manage.php" method="post">
         <section class="confirm">

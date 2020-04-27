@@ -1,4 +1,4 @@
-@mixin basic-button($background, $color) {
+@mixin basic-button($button-background, $color) {
   width: 80%;
   margin: 0 auto 16px;
   font-size: 1.5rem;
@@ -7,8 +7,12 @@
   border-radius: 4px;
   max-width: 400px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-  background: $background;
+  background: $button-background;
   color: $color;
+}
+
+@mixin shadow($top: 0, $left: 0, $color: $lightgray) {
+  box-shadow: $top $left 8px $color;
 }
 
 @mixin button-primary {
@@ -16,7 +20,7 @@
 }
 
 @mixin button-cancel {
-  @include basic-button(#eee, $gray);
+  @include basic-button(#f0f0f0, $gray);
 }
 
 @mixin button-danger {

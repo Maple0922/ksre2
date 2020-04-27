@@ -1,27 +1,40 @@
+@import '../variables';
+
 .index {
   ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
     li {
-      line-height: 40px;
-      height: 40px;
+      margin: 4px 0;
+      width: $length-menucard;
+      height: $length-menucard;
+      max-width: 264px;
+      max-height: 264px;
       padding: 4px 0 40px;
-      width: 100%;
       margin-bottom: 20px;
-      color: $black;
-      border-bottom: 2px solid $lightgray;
+      color: $white;
+      background: $menucard;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 10px $darkgray;
 
       a {
+        opacity: 0.9;
         width: 100%;
-        height: 40px;
+        height: $length-menucard;
         padding: 0 14px;
+        padding-top: calc(#{$length-menucard/5});
         display: block;
+        text-align: center;
+        font-size: 1.6rem;
 
         img {
-          height: 20px;
-          width: 20px;
-          opacity: 0.6;
-          position: relative;
-          top: 3px;
-          margin-right: 16px;
+          height: 36px;
+          width: 36px;
+          margin: 0 auto 24px;
+          display: block;
         }
       }
     }
