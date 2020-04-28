@@ -268,4 +268,40 @@ function send_to_slack($text, $attachment_color){
 
 }
 
+function send_to_line($status_message){
+
+  $startTime = $_POST['startTimeHour'] .':'. $_POST['startTimeMinute'];
+  $endTime   = $_POST['endTimeHour']   .':'. $_POST['endTimeMinute'];
+  $reserveTime = $startTime .'~'. $endTime;
+  $reserveDate = $_POST['month'].'月'.$_POST['date'].'日 ';
+
+  if ($status_message == '削除') {
+    $text = 'の「'.$_POST['name'].'」を削除しました。';
+  } else {
+    $text = 'に「'.$_POST['name'].'」を'.$status_message.'しました。';
+  }
+
+  
+  $accessToken = 'XVmD974bb5VvGYasip4U5UkxhEMGMiwcV3ru5utpKTF0DPZRmhwEQ5GCIUiJR3TTRrhYto9vSA3y/pl0URZUWEeOsklAnh6johNI61HEXT+Gv6AM9c9FP0LQ4GcT2PO64lMOsPrx2M6WL5AFtCrLhQdB04t89/1O/w1cDnyilFU=';
+  
+  $headers = array('Content-Type: application/json',
+                   'Authorization: Bearer ' . $accessToken);
+  
+  $message = array('type' => 'text',
+                   'text' => "$status_message\n$reserveDate\n$reserveTime$text");
+  
+  $body = json_encode(array('messages' => array($message)));
+
+  $options = array(CURLOPT_URL            => 'https://api.line.me/v2/bot/message/narrowcast',
+                   CURLOPT_CUSTOMREQUEST  => 'POST',
+                   CURLOPT_RETURNTRANSFER => true,
+                   CURLOPT_HTTPHEADER     => $headers,
+                   CURLOPT_POSTFIELDS     => $body);
+  
+  $curl = curl_init();
+  curl_setopt_array($curl, $options);
+  curl_exec($curl);
+  curl_close($curl);
+}
+
 ?>
